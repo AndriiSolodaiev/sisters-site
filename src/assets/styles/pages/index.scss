@@ -1,0 +1,775 @@
+.hero {
+  height: 100svh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+
+  &-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+  }
+
+}
+
+.hero-title__wrap {
+  position: relative;
+  width: fit-content;
+  margin-bottom: 40px;
+
+  @include tablet {
+    margin-bottom: 10vh;
+  }
+
+  h1 {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+
+  }
+
+  .title-decor {
+    width: 62.774px;
+    height: 56px;
+    margin-bottom: 18px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+    }
+
+    @include tablet {
+      width: 89.678px;
+      height: 80px;
+      position: absolute;
+      left: 100%;
+      top: 0;
+    }
+  }
+
+  &>img {
+    width: 92vw;
+    height: auto;
+    margin-bottom: 20px;
+
+
+    @include tablet {
+      width: 67vw;
+      margin-bottom: 42px;
+
+    }
+
+    @include laptop {
+      width: 47vw;
+    }
+  }
+
+  h2 {
+    @include title-text;
+
+
+    & {
+      font-size: 9.8vw;
+      color: $wc;
+    }
+
+    @include tablet {
+      font-size: 7vw;
+
+    }
+
+    @include laptop {
+      font-size: 5vw;
+    }
+  }
+}
+
+.hero-content {
+  padding-bottom: 16px;
+
+  @include tablet {
+    padding-bottom: 20px;
+  }
+}
+
+.general-btn {
+  @include tiny-text;
+  background-color: $accent-color;
+  color: $wc;
+  padding: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+
+  @include tablet {
+    width: 67vw;
+
+    &:hover,
+    &:focus {
+      background-color: $accent-color--hover;
+    }
+  }
+
+  @include laptop {
+    width: 47vw;
+  }
+}
+
+.info-wrap {
+  background: $bg-color;
+  border-radius: 4px;
+
+  @include tablet {
+    width: 67vw;
+  }
+
+  @include laptop {
+    width: 47vw;
+  }
+
+  @include tablet {
+    display: flex;
+
+  }
+}
+
+.info-block {
+  padding: 16px;
+  border-bottom: 1px solid $border-color;
+
+
+  &:last-child {
+    border: none;
+  }
+
+  @include tablet {
+    border: none;
+    border-right: 1px solid $border-color;
+    width: 37%;
+
+    &:nth-child(2) {
+      width: 36%;
+    }
+
+    &:last-child {
+      border: none;
+      width: auto;
+    }
+  }
+
+  &__title {
+    @include tiny-text;
+    font-size: 14px;
+    opacity: 0.5;
+    margin-bottom: 12px;
+
+    @include tablet {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__descr {
+    @include tiny-text;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    @include tablet {
+      font-size: 16px;
+
+    }
+
+    span {
+      margin-right: 4px
+    }
+  }
+}
+
+.video-filler {
+  padding-top: 48px;
+  position: relative;
+
+  @include tablet {
+    padding-top: 144px;
+  }
+
+  .section-descr {
+    @include block-subtitle;
+    margin-bottom: 112px;
+
+    @include tablet {
+      max-width: 60vw;
+      margin-bottom: 56px;
+    }
+  }
+
+  .section-decor {
+    position: absolute;
+    z-index: 1;
+    top: 180px;
+    right: 16px;
+    width: 65vw;
+    aspect-ratio: 1/1.12;
+
+    @include tablet {
+      width: 32vw;
+      top: 144px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .video-wrap {
+    width: 100%;
+    aspect-ratio: 1/0.56;
+    background-color: $bc;
+    position: relative;
+    z-index: 2;
+
+    .video {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .play-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    background-color: $bc;
+    color: $wc;
+
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, width 0.5s ease-in-out, opacity 0.4s ease-in-out;
+    cursor: pointer;
+
+    &.is-hidden {
+      width: 0px;
+      opacity: 0;
+    }
+
+    svg path {
+      transition: fill 0.3s ease-in-out;
+    }
+
+    &:hover {
+      background-color: $wc;
+      color: $bc;
+
+      svg path {
+        fill: $bc
+      }
+    }
+  }
+}
+
+//PLANNINGS
+
+.plannings {
+  padding-top: 78px;
+  padding-bottom: 72px;
+
+  @include tablet {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+}
+
+.plannings-title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+
+  @include tablet {
+    margin-bottom: 64px;
+  }
+
+  .plannings-title {
+    @include title-text;
+    position: relative;
+    z-index: 2;
+
+    &>svg {
+      width: 43px;
+      height: 41px;
+      position: absolute;
+      z-index: -1;
+      top: -10px;
+      right: -20px;
+
+      @include tablet {
+        width: 90.39px;
+        height: 87.33px;
+        top: -19px;
+        right: -45px;
+      }
+    }
+  }
+
+
+
+
+}
+
+
+
+.swiper-btns-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid $border-color;
+  height: 52px;
+  margin-bottom: 32px;
+
+  @include tablet {
+    width: fit-content
+  }
+
+  &.pc-v {
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+  }
+
+  &.mob-v {
+    margin-bottom: 32px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  @include tablet {
+    width: 52px;
+  }
+
+  &.swiper-button-disabled {
+    opacity: 0.5;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+}
+
+.swiper-button-prev {
+  border-right: 1px solid $border-color;
+
+  svg {
+    transform: rotate(180deg)
+  }
+}
+
+.swiper-plannings {
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 116px;
+  }
+}
+
+.planning-card {
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid rgba(41, 41, 37, 0.10);
+  // overflow: hidden;
+  position: relative;
+  z-index: 2;
+  background-color: $bg-color;
+  transition: all 0.3s ease-in-out;
+
+  .planning-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    padding: 37px 0;
+    background-color: $bc;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px 8px 0 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    background-color: $bg-color;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 8px 16px;
+
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+    h3 {
+      @include general-text-bold;
+
+      & {
+        font-size: 28px
+      }
+
+    }
+
+    p {
+      @include general-text;
+    }
+  }
+
+  &__descr {
+    background-color: $bg-color;
+    padding: 0 16px;
+    padding-bottom: 16px;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    p {
+      @include general-text;
+    }
+  }
+
+  .general-btn {
+    border-radius: 0;
+    transform: translateY(-101%);
+    transition: all 0.3s ease-in-out;
+    width: calc(100% + 2px);
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    left: -1px;
+    border: 1px solid $border-color;
+    border-top: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+
+  @include tablet {
+
+
+    &:hover,
+    &:focus {
+      border-bottom: none;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+
+
+      .general-btn {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      .planning-card__descr {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .planning-card__descr,
+      .planning-card__title {
+        color: $wc;
+        background-color: $bc;
+
+      }
+    }
+
+
+  }
+}
+
+.plannings-descr {
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  p {
+    @include block-subtitle;
+
+    margin-bottom: 16px;
+
+    @include tablet {
+      font-size: 2.1vw;
+      width: 45%;
+    }
+  }
+
+  .general-btn {
+    width: 100%;
+
+    @include tablet {
+      width: 40%
+    }
+  }
+}
+
+//Slide-photos sction
+
+.slide-photos {
+  height: 200vh;
+
+  &__bg {
+    min-height: 90vh;
+    background-image: url("../images/slide-bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: right;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 32px 0;
+
+    @include tablet {
+      padding: 64px 0 96px 0;
+      border-radius: 12px;
+    }
+  }
+
+  &__title {
+    @include subtitle-text;
+    margin-bottom: 32px;
+    width: 100%;
+    text-align: center;
+
+    @include tablet {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__content {
+    overflow: hidden;
+  }
+}
+
+.swiper-slide-photos {
+  .swiper-slide {
+    border-radius: 8px;
+    aspect-ratio: 1/1.25;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+}
+
+.view {
+  &-container {
+    background-color: $bc;
+    border-radius: 8px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    height: 90vh;
+
+    @include tablet {
+
+      margin-top: 100px;
+      padding-top: 64px;
+      padding-bottom: 96px;
+      border-radius: 12px;
+    }
+  }
+
+
+
+  &__title {
+    @include subtitle-text;
+    color: $wc;
+    margin-bottom: 32px;
+    text-align: center;
+
+    @include tablet {
+      font-size: 4.76vw;
+      margin-bottom: 64px;
+    }
+  }
+
+  &__iframe {
+    width: 100%;
+    border-radius: 8px;
+    height: 70vh;
+
+    @include tablet {
+      height: 60vh;
+    }
+  }
+}
+
+.advantages {
+  min-height: 100vh;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  @include tablet {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  &__title-wrap {
+    position: relative;
+    width: fit-content;
+
+    svg {
+      width: 38px;
+      height: 37px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(47%, 2%);
+      z-index: -1;
+
+      @include tablet {
+        width: 4.23vw;
+        height: 4.23vw;
+
+      }
+    }
+  }
+
+  &__title {
+    @include title-text;
+    color: $wc;
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 45px;
+    }
+  }
+
+  .general-btn {
+    width: 100%;
+    background-color: $second-accent-color;
+    color: $bc;
+
+    &:hover {
+      background-color: $second-accent-color--hover
+    }
+  }
+}
+
+.swiper-advantages-ctrls {
+  position: relative;
+  border-bottom: 1px solid rgba(249, 242, 235, 0.10);
+  margin-bottom: 32px;
+
+  @include tablet {
+    margin-bottom: 64px;
+  }
+
+  .swiper-slide {
+    width: fit-content;
+    @include tiny-text;
+    position: relative;
+    color: $wc;
+    padding-bottom: 20px;
+    cursor: pointer;
+
+    &.active-slide {
+      font-weight: 700;
+
+
+      &::after {
+        content: "";
+        background-color: $wc;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+
+      }
+    }
+  }
+
+
+
+}
+
+.advantages-content {
+  margin-bottom: 16px;
+  overflow: hidden;
+  min-height: 45vh;
+
+  @include tablet {
+    margin-bottom: 48px;
+  }
+}
+
+.advantage-panel {
+  flex-direction: column;
+
+  .text-part {
+    p {
+      @include general-text;
+      color: $wc;
+      margin-bottom: 16px;
+
+      @include tablet {
+        margin-bottom: 32px
+      }
+    }
+  }
+
+  .media-part {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  @include tablet {
+    flex-direction: row;
+    gap: 40px;
+
+    .text-part {
+      width: 37%;
+    }
+
+    .media-part {
+      width: 60%;
+    }
+  }
+}

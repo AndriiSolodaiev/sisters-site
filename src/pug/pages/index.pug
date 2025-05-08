@@ -1,0 +1,236 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'index'
+    var id_page = 'id-page-index'
+    var class_page = 'class-page-index'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+    var plannings = [{title: "Смарт", area: "від 30м2", price:"від 1 700 000 грн.", img: "./assets/images/plannings/planning1.png" },  
+    {title: "Комфорт", area: "від 55м2", price:"від 2 100 000 грн.", img: "./assets/images/plannings/planning1.png" },
+    {title: "Фемілі", area: "від 40м2", price:"від 1 900 000 грн." , img: "./assets/images/plannings/planning1.png"},
+    {title: "Преміум", area: "від 70м2", price:"від 2 400 000 грн.", img: "./assets/images/plannings/planning1.png" },
+    {title: "Комфорт", area: "від 55м2", price:"від 2 100 000 грн.", img: "./assets/images/plannings/planning1.png" }]
+block meta
+  title= title_page
+  meta(name='description' content='')
+block head
+  link(rel='stylesheet' href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/index.bundle.js')
+block content
+  section.hero 
+    .container 
+      img(src="./assets/images/hero.jpg", alt="hero").hero-img 
+      .hero-title__wrap 
+        .title-decor 
+          <svg xmlns="http://www.w3.org/2000/svg" width="90" height="80" viewBox="0 0 90 80" >
+            <path d="M88.5066 35.6325L70.4559 4.36753C68.8946 1.66364 66.0102 0 62.8895 0H26.7881C23.6674 0 20.783 1.6655 19.2217 4.36753L1.17097 35.6325C-0.390323 38.3364 -0.390323 41.6655 1.17097 44.3694L19.2217 75.6325C20.783 78.3364 23.6674 80 26.7881 80H62.8895C66.0102 80 68.8946 78.3345 70.4559 75.6325L88.5066 44.3694C90.0679 41.6655 90.0679 38.3364 88.5066 35.6325Z" fill="#1C3543"/>
+            <path d="M29.9962 39.866V36.2186H35.123C36.3512 36.2186 37.0807 36.8904 37.0807 38.0423C37.0807 39.1942 36.3512 39.866 35.123 39.866H29.9962ZM29.9962 46.7197V42.7262H35.1993C38.1563 42.7262 40.3056 40.7294 40.3056 38.0032C40.3056 35.277 38.2698 33.2803 35.1993 33.2803H26.8662V46.7197H29.9962Z" fill="white"/>
+            <path d="M45.5273 33.2822H42.3787V46.7216H45.5273V33.2822Z" fill="white"/>
+            <path d="M48.0804 46.7197H59.8506V43.7441H51.2291V41.4031H58.1032V38.5225H51.2291V36.2577H59.6962V33.2822H48.0804V46.7197Z" fill="white"/>
+            <path d="M73.0965 46.7197H76.2452V33.2803H63.9577V42.3429C63.9577 43.398 63.6506 43.7441 62.6904 43.7441H61.5385V46.7197H63.5166C66.0121 46.7197 67.1063 45.2031 67.1063 42.3224V36.2559H73.0965V46.7197Z" fill="white"/>
+          </svg>
+        h1 Sister 
+        img(src="./assets/images/title.png", alt="")
+        h2 Містечко посмішок
+      .hero-content 
+        a.general-btn(href="/") 
+          span Обрати квартиру
+        .info-wrap 
+          .info-block 
+            .info-block__title 
+              span Адреса
+            .info-block__descr 
+              p 
+                span вул. Клеманська, 3
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                  <g opacity="0.5">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.91911 12.1665L9.25247 5.83322H5.33333V3.83322H12.6667V11.1665H10.6667V7.24742L4.33333 13.5807L2.91911 12.1665Z" fill="#292925"/>
+                  </g>
+                </svg>
+              p 
+                span до м. Осокорки 12 хвилин
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                  <g opacity="0.5">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M4.30989 3.16669H11.6901L13.9123 6.50002H15.3333V7.83335H14.6667V13.8334H11.3333V12.5H4.66667V13.8334H1.33334V7.83335H0.666672V6.50002H2.08766L4.30989 3.16669ZM5.33334 9.83335H3.33334V8.50002H5.33334V9.83335ZM12.6667 9.83335H10.6667V8.50002H12.6667V9.83335Z" fill="#292925"/>
+                  </g>
+                </svg>
+          .info-block 
+            .info-block__title 
+              span Квартири
+            .info-block__descr 
+              p 
+                span 5 черг
+              p 
+                span 2579 квартир
+              p 
+                span 75 квартир у продажу
+          .info-block 
+            .info-block__title 
+              span Квартири
+            .info-block__descr 
+              p 
+                span 1 квартал
+              p 
+                span 2027 року
+              
+  section.video-filler.container
+    p.section-descr Sister — простір, де поєднуються робота, відпочинок і спілкування для тих, хто цінує різноманітність у повсякденному житті.
+    .section-decor 
+      +svg("sister")
+      //- img(src="./assets/images/sister.png" alt="decor")
+    .video-wrap
+      video(controls, playsinline).video 
+        source(src="./assets/videos/video.mp4", type="video/mp4")
+        source(src="./assets/videos/video.webm", type="video/webm")
+      .play-btn
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M14.6666 8.00004L3.33331 1.33337V14.6667L14.6666 8.00004Z" fill="#F9F2EB"/>
+        </svg>
+        span Відтворити відео
+  section.plannings.container
+    .plannings-title-wrap 
+      h2.plannings-title Яку квартиру 
+        br
+        | шукаєш?
+        <svg xmlns="http://www.w3.org/2000/svg" width="91" height="89" viewBox="0 0 91 89" fill="none">
+          <path d="M11.2502 43.67L33.4002 52.61C32.7702 53.41 32.3701 54.32 32.2001 55.27L28.0002 55.62C27.5202 55.66 27.0902 55.9 26.8002 56.24C26.3502 56.78 26.2002 57.57 26.6302 58.32C26.9402 58.85 27.7502 59.19 28.3602 59.14L32.5701 58.79C32.9301 59.63 33.4902 60.42 34.2502 61.06C35.0102 61.7 35.8702 62.12 36.7602 62.33L37.1202 66.61C37.1602 67.09 37.3902 67.52 37.7402 67.81C38.1902 68.19 38.8302 68.34 39.4802 68.14C40.2602 67.89 40.7102 67.08 40.6502 66.26L40.3002 62.12C41.2002 61.8 42.0502 61.25 42.7302 60.49L54.3301 79.9C58.3001 86.54 66.3002 89.92 73.6802 87.57C76.0002 86.83 78.1702 85.59 80.0402 83.82C87.6002 76.66 87.1002 64.75 79.3702 58.21C76.5402 55.82 73.1602 54.5 69.7302 54.22C67.3402 53.69 67.7902 50.16 70.2402 50.24L76.1502 50.43C76.8602 50.51 77.5702 50.54 78.2802 50.5H78.3301C82.3501 50.31 86.2502 48.31 88.7402 44.62C92.1902 39.52 91.5902 32.53 87.3402 28.08C82.5502 23.06 75.0502 22.68 69.8402 26.5L69.8201 26.52C69.1901 26.97 68.6103 27.5 68.0602 28.07L59.8702 33.88C58.1302 35.42 55.6001 33.28 56.8201 31.3L61.1901 22.25C61.6701 21.62 62.0802 20.95 62.4302 20.26V20.24C65.3502 14.47 63.7202 7.12002 57.9702 3.23002C52.8702 -0.21998 45.8902 0.36002 41.4302 4.61002C38.2102 7.68002 36.8802 11.86 37.3702 15.85V15.9C37.4502 16.61 37.5902 17.3 37.7902 17.99L39.2202 25.16C39.7002 27.54 36.3302 28.58 35.3802 26.34L33.6702 22.28V22.26C32.6502 19.69 31.0102 17.32 28.7602 15.42C21.0402 8.89002 9.21022 10.37 3.40022 19.01C1.35022 22.06 0.460168 25.56 0.600168 29.02C0.870168 35.54 5.19019 41.21 11.2502 43.65V43.67Z" fill="#D89E79"/>
+        </svg>
+      .swiper-btns-wrap.pc-v
+        .swiper-button-prev
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z" fill="#292925"/>
+          </svg>
+        .swiper-button-next
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z" fill="#292925"/>
+          </svg>
+    .swiper-plannings 
+      .swiper-wrapper 
+        each planning in plannings
+          .swiper-slide 
+            .planning-card(data-title=planning.title, data-area=planning.area, data-price=planning.price, data-img=planning.img) 
+              .planning-img 
+                img(src=planning.img, alt="planning")
+              .planning-card__title 
+                h3= planning.title
+                p 
+                  span= planning.area
+              .planning-card__descr
+                p 
+                  span= planning.price
+              button.general-btn(data-planning-btn) 
+                span Детальніше
+    .swiper-btns-wrap.mob-v
+        .swiper-button-prev
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z" fill="#292925"/>
+          </svg>
+        .swiper-button-next
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z" fill="#292925"/>
+          </svg>
+    .plannings-descr
+      p Не впевнені яка квартира вам підходить? Пройдіть наш квіз і підберіть квартиру своєї мрії.  
+      button.general-btn
+        span Підібрати квартиру
+  section.slide-photos.container 
+    .slide-photos__bg
+        h2.slide-photos__title Який вигляд може 
+          br
+          | мати твоя квартира?
+        .swiper-slide-photos.container 
+          .swiper-wrapper 
+            .swiper-slide 
+              img(src="./assets/images/flats/flat1.jpg", alt="flats")
+            .swiper-slide 
+              img(src="./assets/images/flats/flat2.jpg", alt="flats")
+            .swiper-slide 
+              img(src="./assets/images/flats/flat3.jpg", alt="flats")
+            .swiper-slide 
+              img(src="./assets/images/flats/flat1.jpg", alt="flats")
+            .swiper-slide 
+              img(src="./assets/images/flats/flat2.jpg", alt="flats")
+            .swiper-slide 
+              img(src="./assets/images/flats/flat3.jpg", alt="flats")
+  section.view.container
+    .view-container.container  
+      h2.view__title Вид із квартир  
+      iframe(src="https://apartment-tours.smartorange.com.ua/twins-day-floors/?scene=0" loading="lazy" allowfullscreen="true").view__iframe
+  section.advantages.container
+    .advantages__title-wrap
+      h2.advantages__title Переваги
+      <svg xmlns="http://www.w3.org/2000/svg" width="65" height="64" viewBox="0 0 65 64" fill="none">
+        <path d="M36.4708 13.8137L34.9482 2.66309C34.456 -0.92032 29.2646 -0.874377 28.838 2.72216L27.5188 13.899C27.2826 15.8876 24.9002 16.7801 23.4104 15.4347L15.0754 7.87412C12.3977 5.44581 8.44672 8.8192 10.4288 11.8448L16.6046 21.2561C17.7071 22.9297 16.447 25.148 14.4453 25.0758L3.20287 24.6361C-0.41335 24.4982 -1.26654 29.624 2.19873 30.6609L12.9752 33.903C14.8916 34.4806 15.3576 36.9877 13.7759 38.2149L4.883 45.1127C2.02153 47.331 4.66642 51.8069 7.98731 50.3762L18.3241 45.9331C20.1683 45.1389 22.1306 46.76 21.7106 48.7223L19.3282 59.722C18.5603 63.2594 23.4629 64.9921 25.0905 61.7565L30.1572 51.7085C31.0563 49.9168 33.6093 49.8971 34.5413 51.6691L39.7851 61.6252C41.4718 64.828 46.335 63.0035 45.5081 59.4857L42.9288 48.532C42.4694 46.5828 44.4055 44.9223 46.2628 45.6837L56.6849 49.9431C60.032 51.3082 62.5916 46.7862 59.6908 44.627L50.6732 37.8934C49.0652 36.6923 49.4853 34.1787 51.3951 33.5683L62.1125 30.1293C65.5581 29.0267 64.6064 23.9141 60.9968 24.1241L49.7609 24.7673C47.7592 24.8789 46.4663 22.6868 47.536 20.987L53.5346 11.4641C55.4642 8.40573 51.4542 5.09797 48.8158 7.57879L40.6186 15.2903C39.1616 16.662 36.753 15.8154 36.4839 13.8268" fill="#6975FF"/>
+      </svg>
+    .swiper-advantages-ctrls
+      .swiper-wrapper
+        .swiper-slide.active-slide(data-id="location") Розташування
+        .swiper-slide(data-id="architecture") Архітектура
+        .swiper-slide(data-id="infrastructure") Інфраструктура
+        .swiper-slide(data-id="activities") Парк активностей
+        .swiper-slide(data-id="school") Власні школа та дитсадок
+        .swiper-slide(data-id="ecosystem") Екосистема послуг
+        .swiper-slide(data-id="riel") Riel Family Style
+        .swiper-slide(data-id="safety") Безпека
+        .swiper-slide(data-id="energy") Енергозалежність
+      //- .swiper-scrollbar
+    .advantages-content 
+      .advantage-panel(data-id="location") 
+        .text-part 
+          p.panel-item Житловий комплекс Sister розташувався біля мальовничого берега Дніпра. Тут ви отримаєте все й одразу: прогулянки у зелених зонах, шопінг у River Mall, зручні супермаркети поруч.
+          p.panel-item Для сімей з дітьми — приємний бонус: за 15 хвилин ходи розташовані школи та дитсадки, тож ранкові збори пройдуть без зайвого стресу.
+        
+        .media-part.map-wrap
+          .swiper-map.panel-item
+            .swiper-wrapper
+              .swiper-slide.active-slide(data-id="school") Школи
+              .swiper-slide(data-id="garden") Садочки
+              .swiper-slide(data-id="hospitals") Лікарні
+              .swiper-slide(data-id="activities") Розваги
+              .swiper-slide(data-id="restaurants") Ресторани
+              .swiper-slide(data-id="sport") Спорт
+              .swiper-slide(data-id="supermarkets") Продукти
+          #map.panel-item
+
+      .advantage-panel(data-id="architecture") 
+        .text-part 
+          p.panel-item Наш комплекс — це затишні будинки на 9-12 поверхів із захищеними внутрішніми двориками та відкритими просторами для всієї родини. А для тих, хто прагне більше — передбачено і 24 поверхові вежі з панорамними краєвидами.
+          p.panel-item Тут завжди спокійно: двори захищають від вітру,  а відсутність проїзних вулиць навколо дарує тишу.
+          p.panel-item Фасади сучасні та стримані, з приємними акцентами, які додають характеру, але не порушують загальний спокій. Частина квартир має власні тераси — чудове місце для ранкової кави чи вечірніх посиденьок.
+          p.panel-item Ми винесли всі вʼїзди до паркінгів за межі дворів, щоб нічого не порушувало вашого комфорту. А всередині комплексу — зелені сади, затишні куточки для зустрічей і відпочинку.
+        .media-part
+          img(src="./assets/images/arc.jpg", alt="arcitecture").panel-item
+        
+      .advantage-panel(data-id="infrastructure") Контент про інфраструктуру
+      .advantage-panel(data-id="activities") Парк активностей
+      .advantage-panel(data-id="school") Контент про Власні школа та дитсадок
+      .advantage-panel(data-id="ecosystem") Контент про Екосистема послуг
+      .advantage-panel(data-id="riel") Контент про Riel Family Style
+      .advantage-panel(data-id="safety") Контент про Безпека
+      .advantage-panel(data-id="energy") Контент про Енергозалежність
+      
+    button.general-btn(type="button" data-call-us-btn) 
+      span Записатися на консультацію
+
+          
+    
+                
+
+
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

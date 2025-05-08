@@ -1,0 +1,32 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'single-news'
+    var id_page = 'id-page-single-news'
+    var class_page = 'class-page-single-news'
+    var headerCustomClass = 'type2' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'News',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/singleNews.bundle.js')
+block content
+  
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

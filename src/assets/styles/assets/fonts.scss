@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Riel';
+  src: local('Riel Regular'), local('Riel-Regular'),
+    url('../fonts/Riel-Regular.woff') format('woff'),
+    url('../fonts/Riel-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Riel';
+  src: local('Riel Bold'), local('Riel-Bold'),
+    url('../fonts/Riel-Bold.woff') format('woff'),
+    url('../fonts/Riel-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Riel';
+  src: local('Riel Black'), local('Riel-Black'),
+    url('../fonts/Riel-Black.woff') format('woff'),
+    url('../fonts/Riel-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}

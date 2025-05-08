@@ -1,0 +1,30 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'projects'
+    var id_page = 'id-page-projects'
+    var class_page = 'class-page-projects'
+    var headerCustomClass = 'type2' 
+    var breadcrumbsSubitem = [
+      
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/projects.bundle.js')
+block content
+  
+
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug

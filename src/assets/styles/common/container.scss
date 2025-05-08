@@ -1,0 +1,13 @@
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+
+  @include tablet {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}

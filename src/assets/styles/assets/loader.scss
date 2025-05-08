@@ -1,0 +1,129 @@
+.loader-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  opacity: 1;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color:$bg-color;
+  transition: opacity 0.4s linear; 
+  &.loaded {
+    opacity: 0;
+    pointer-events: none;
+  //   .loader_logo-wrap{
+  //     // animation: none;
+  //   }
+  }
+}
+
+.loader_logo-wrap {
+  animation: 2s ease-in-out loader infinite;
+
+  height: 50px;
+@include tablet {
+  height: 80px
+}
+@include desktop {
+  height: 100px
+}
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+@keyframes loader {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+// .loader__bg-svg {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: -1;
+//   width: 100vw;
+//   height: 100vh;
+//   object-fit: cover;
+
+//   // transform: scale(10);
+//   // opacity: 0;
+//   // transform: translateZ(1000px);
+
+//   // &:hover {
+//   //   transform: translateZ(1000px);
+
+//   //   .loader__bg {
+//   //     background-color: #F8F8F8;
+//   //   }
+//   // }
+// }
+
+// .loader__gradient {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 100%;
+//   width: 100%;
+//   background-color: #ffffffa6;
+
+// }
+
+// .loader__logo-container {
+//   position: absolute;
+//   z-index: 2;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+
+//   svg {
+
+//     width: 131px;
+//     height: 120px;
+//     margin-bottom: 30px;
+
+//     path {}
+
+//   }
+
+//   h2 {
+//     font-family: $default-font;
+
+
+//     font-style: normal;
+//     font-weight: 700;
+//     line-height: 100%;
+//     text-align: center;
+//     text-transform: uppercase;
+
+//     margin-bottom: 30px;
+//     font-size: 36px;
+//   }
+
+//   p {
+//     font-family: $default-font;
+
+
+//     font-style: normal;
+//     font-weight: 700;
+//     line-height: 100%;
+//     text-align: center;
+//     text-transform: uppercase;
+
+//     font-size: 16px;
+//   }
+// }

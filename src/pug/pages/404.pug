@@ -1,0 +1,40 @@
+extends ../layout/main
+block variable
+    -
+        var headerCustomClass = 'type1' 
+block meta
+    title= '404'
+    meta(name='description' content='')
+    
+block head
+    link(rel='stylesheet' href="./assets/styles/main.min.css")
+
+block scripts
+    script(defer src='./assets/scripts/vendors.bundle.js')
+    script(defer src='./assets/scripts/header.bundle.js')
+    script(defer src='./assets/scripts/footer.bundle.js')
+
+block content
+    section.notFound
+        .notFound-bg
+            .container.notFound__text
+                .notFound__title 
+                    p 404
+                    h1 Упс, щось пішло не так...
+                .notFound-links__wrap 
+                    a.general-button(href="") 
+                        p Повернутися назад
+
+                    a.general-button(href="/") 
+                        p На головну
+            
+
+
+
+
+//- block footer
+//-     include ../includes/footer.pug
+
+block header
+    include ../includes/header.pug
+

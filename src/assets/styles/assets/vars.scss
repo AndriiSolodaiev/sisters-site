@@ -1,0 +1,103 @@
+$default-font: 'Rial', sans-serif;
+$default-font2: 'montser', sans-serif;
+
+$mc2: #ff554c;
+$mc3: #e5df06;
+$mc4: #4f90b6;
+$gray: #878797;
+$text: #22223e;
+$wc: #F9F2EB;
+$bc: #292925;
+
+
+$bg-color: #F9F2EB;
+$accent-color: #6975FF;
+$text-color: #292925;
+$second-accent-color: #C7A8D9;
+$border-color: #E4DED7;
+$second-accent-color--hover: #c5b0d1fd;
+$accent-color--hover: #838FEA;
+
+
+@mixin title-text () {
+	font-size: 40px;
+	font-family: $default-font;
+	font-weight: 700;
+	font-style: normal;
+	line-height: 100%;
+	text-decoration: none;
+
+	@include tablet {
+		font-size: 6.3vw;
+	}
+}
+
+@mixin subtitle-text() {
+	font-size: 30px;
+	font-family: $default-font;
+	font-weight: 700;
+	font-style: normal;
+	line-height: 120%;
+	text-decoration: none;
+
+	@include tablet {
+		font-size: 4.23vw;
+	}
+}
+
+@mixin block-subtitle () {
+	font-size: 24px;
+	font-family: $default-font;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 125%;
+	text-decoration: none;
+	text-transform: none;
+
+	@include tablet {
+		font-size: 3.17vw;
+		line-height: 116%;
+	}
+}
+
+@mixin general-text() {
+	font-size: 18px;
+	font-family: $default-font;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 133%;
+	text-decoration: none;
+	text-transform: none;
+
+	@include tablet {
+		font-size: 1.38vw;
+	}
+}
+
+@mixin general-text-bold() {
+	font-size: 18px;
+	font-family: $default-font;
+	font-weight: 700;
+	font-style: normal;
+	line-height: 133%;
+	text-decoration: none;
+	text-transform: none;
+
+	@include tablet {
+		font-size: 1.38vw;
+	}
+}
+
+@mixin tiny-text() {
+	font-size: 16px;
+	font-family: $default-font;
+	font-weight: 500;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+
+	// @include tablet {
+	// 	font-size: 1.05vw;
+	// }
+}
