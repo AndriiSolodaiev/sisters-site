@@ -9,11 +9,7 @@ const config = {
     index: './src/assets/scripts/gulp-modules/index.js',
     header: './src/assets/scripts/modules/header/header.js',
     footer: './src/assets/scripts/modules/footer/footer.js',
-    projects: './src/assets/scripts/gulp-modules/projects.js',
-    news: './src/assets/scripts/gulp-modules/news.js',
-    contacts: './src/assets/scripts/gulp-modules/contacts.js',
-    singleProject: './src/assets/scripts/gulp-modules/single-project.js',
-    singleNews: './src/assets/scripts/gulp-modules/single-news.js',
+    
   },
   output: {
     filename: '[name].bundle.js',

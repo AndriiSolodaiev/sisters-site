@@ -9,7 +9,7 @@ import { useState } from './helpers/helpers';
 /*
  * form handlers start
  */
-const forms = ['[data-form="top-form"]', '[data-form="bottom-form"]'];
+const forms = ['[data-form="top-form"]', '[data-form="form-big"]'];
 
 forms.forEach(form => {
   const $form = document.querySelector(form);

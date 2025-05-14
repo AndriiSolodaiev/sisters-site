@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .header-bg {
@@ -82,6 +82,13 @@
   border-radius: 4px;
   background-color: $bg-color;
   border-left: 1px solid $border-color;
+  transition: opacity 0.3s ease-in-out;
+
+  @include tablet {
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }
 
 .header-bg .header-phone {
@@ -203,6 +210,27 @@
 
     span {
       white-space: nowrap;
+    }
+
+    @include tablet {
+      width: fit-content;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0%;
+        background-color: $bc;
+        height: 1px;
+        transition: width 0.25s ease-in-out;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+
     }
   }
 }

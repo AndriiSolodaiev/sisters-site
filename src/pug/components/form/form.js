@@ -3,7 +3,8 @@ import i18next from 'i18next';
 import axios from 'axios';
 import initView from './form-view';
 import { langDetect } from '../../../assets/scripts/modules/helpers/helpers';
-
+import ionRangeSlider from 'ion-rangeslider';
+import $ from 'jquery';
 const sendForm = async data => {
   const response = await axios.post('/wp-admin/admin-ajax.php', data);
   return response.data;
@@ -235,7 +236,9 @@ export default class FormMonster {
           this.watchedState.status = 'loading';
           const formData = new FormData(this.elements.$form);
           formData.append('action', 'app');
-
+          for (let [key, value] of formData.entries()) {
+            console.log(`${key}:`, value);
+          }
           /* eslint-disable-next-line */
           const { error, code_error } = await sendForm(formData);
 
@@ -270,3 +273,58 @@ export default class FormMonster {
     this.listers();
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const select = document.querySelector('#time-select');
+  const selected = select.querySelector('.selected-time');
+  const options = select.querySelectorAll('.option');
+  const hiddenInput = document.querySelector('#hidden-time');
+  console.log(select);
+  select.addEventListener('click', () => {
+    select.classList.toggle('open');
+  });
+
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      const value = option.getAttribute('data-value');
+      selected.textContent = value;
+      hiddenInput.value = value;
+
+      // зняти попередню selected
+      options.forEach(o => o.classList.remove('selected'));
+      option.classList.add('selected');
+
+      select.classList.remove('open');
+    });
+  });
+
+  // Закриває селект при кліку поза ним
+  document.addEventListener('click', e => {
+    if (!select.contains(e.target)) {
+      select.classList.remove('open');
+    }
+  });
+  const $range = $('#custom-range');
+  const $inputFrom = document.getElementById('price-from');
+  const $inputTo = document.getElementById('price-to');
+
+  $range.ionRangeSlider({
+    skin: 'flat',
+    type: 'double',
+    min: $range.data('min'),
+    max: $range.data('max'),
+    from: $range.data('from'),
+    to: $range.data('to'),
+    step: $range.data('step'),
+    onStart: updateInputs,
+    // onChange: updateInputs,
+    onFinish: updateInputs,
+  });
+
+  const sliderInstance = $range.data('ionRangeSlider');
+
+  function updateInputs(data) {
+    $inputFrom.value = data.from;
+    $inputTo.value = data.to;
+  }
+});

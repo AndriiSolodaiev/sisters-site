@@ -91,7 +91,7 @@
     "glsl-noise": "0.0.0",
     "glslify": "^7.1.1",
     "google-maps": "^4.3.3",
-    "gsap": "^3.5.1",
+    "gsap": "^3.13.0",
     "gulp-pretty-html": "^2.0.10",
     "headroom.js": "^0.12.0",
     "i18next": "^19.8.4",

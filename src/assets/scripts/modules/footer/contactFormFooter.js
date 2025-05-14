@@ -5,7 +5,7 @@ import SexyInput from '../../../../pug/components/input/input';
 import { successPopup } from './successPopup';
 
 export const contactFormFooter = (formRef, onSuccess) => {
-  const btnRef = formRef.querySelector('[data-btn-submit="data-btn-submit"]');
+  const btnRef = formRef.querySelector('[data-btn-submit]');
   new FormMonster({
     elements: {
       $form: formRef,

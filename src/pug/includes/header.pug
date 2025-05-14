@@ -23,35 +23,151 @@ header(class="header "+headerCustomClass)
         </svg>
 
   .overflow(data-call-us__overflow).hidden
-    .form-wrap(data-call-us-modal)
+    .modal-form(data-call-us-modal)
       .close-btn(data-call-us-modal-close) 
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.99992 2.79285L4.35348 3.1464L11.9999 10.7928L19.6464 3.1464L19.9999 2.79285L20.707 3.49995L20.3535 3.85351L12.707 11.5L20.3535 19.1464L20.707 19.5L19.9999 20.2071L19.6464 19.8535L11.9999 12.2071L4.35348 19.8535L3.99992 20.2071L3.29282 19.5L3.64637 19.1464L11.2928 11.5L3.64637 3.85351L3.29282 3.49995L3.99992 2.79285Z" fill="#F6F6F6"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.99992 2.79285L4.35348 3.1464L11.9999 10.7928L19.6464 3.1464L19.9999 2.79285L20.707 3.49995L20.3535 3.85351L12.707 11.5L20.3535 19.1464L20.707 19.5L19.9999 20.2071L19.6464 19.8535L11.9999 12.2071L4.35348 19.8535L3.99992 20.2071L3.29282 19.5L3.64637 19.1464L11.2928 11.5L3.64637 3.85351L3.29282 3.49995L3.99992 2.79285Z" fill="#292925"/>
         </svg>
-      .form-title Зворотній дзвінок
-      .form-descr Якщо у вас лишилися запитання ми з радістю відповімо вам
+      .form-title Замовити дзвінок
       +form
+  .overflow(data-call-us__overflow--big).hidden
+    .modal-form(data-call-us-modal--big)
+      .close-btn(data-call-us-modal-close--big) 
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.99992 2.79285L4.35348 3.1464L11.9999 10.7928L19.6464 3.1464L19.9999 2.79285L20.707 3.49995L20.3535 3.85351L12.707 11.5L20.3535 19.1464L20.707 19.5L19.9999 20.2071L19.6464 19.8535L11.9999 12.2071L4.35348 19.8535L3.99992 20.2071L3.29282 19.5L3.64637 19.1464L11.2928 11.5L3.64637 3.85351L3.29282 3.49995L3.99992 2.79285Z" fill="#292925"/>
+        </svg>
+      .form-title Зараз все підберемо
+      .form-wrapper(data-form-wrapper)
+      
+        form(data-form="form-big" autocomplete="off" contact-form-js).form
+         
+          .inputs-wrapper(data-lenis-prevent)
+            .form-field(data-field-input data-field-price data-status="field--inactive").first-offset
+              .input-title  Який у вас бюджет?
+              .link-range-wrapper
+                input(type="text", id="custom-range" data-range-change-from="budget-from" data-prefix="$ " data-step="1000" data-range-change-to="budget-to" name="budget" data-min="25000" data-max="150000" data-from="50000" data-to="80000")
+                input(type="hidden", name="price_from", id="price-from")
+                input(type="hidden", name="price_to", id="price-to")
+            .form-field.form-field-input(data-field-input data-field-rooms data-status="field--inactive").first-offset
+              .input-title  Яка кількість кімнат вам потрібна? 
+                span(style="opacity: 0.7") (можна обрати декілька варіантів)
+              .form-checkbox-group
+                label.custom-checkbox
+                  input(type="checkbox" name="rooms[]" value="Студія" hidden)
+                  span.checkbox-circle
+                  |  Студія
+                label.custom-checkbox
+                  input(type="checkbox" name="rooms[]" value="1 спальня" hidden)
+                  span.checkbox-circle
+                  |  1 спальня
+                label.custom-checkbox
+                  input(type="checkbox" name="rooms[]" value="2 спальні" hidden)
+                  span.checkbox-circle
+                  |  2 спальні
+                label.custom-checkbox
+                  input(type="checkbox" name="rooms[]" value="3 спальні" hidden)
+                  span.checkbox-circle
+                  |  3 спальні
+            .form-area-wrap
+              .form-field.form-field-input(data-field-input data-field-area-from data-status="field--inactive").first-offset
+                .input-title  Яка площа?
+                input(type='number' name="area-from" placeholder="0").form-field__input
+                .input-message(data-input-message)
+              .form-field.form-field-input(data-field-input data-field-area-to data-status="field--inactive").first-offset
+                
+                input(type='number' name="area-to" placeholder="300").form-field__input
+                .input-message(data-input-message)
+
+            .form-field.form-field-input(data-field-input data-field-features data-status="field--inactive").first-offset
+              .input-title  Що має бути у квартирі? 
+                span(style="opacity: 0.7") (можна обрати декілька варіантів)
+              .form-checkbox-group
+                label.custom-checkbox
+                  input(type="checkbox" name="features[]" value="Вид" hidden)
+                  span.checkbox-circle
+                  |  Вид
+                label.custom-checkbox
+                  input(type="checkbox" name="features[]" value="Сонячна / не сонячна сторона" hidden)
+                  span.checkbox-circle
+                  |  Сонячна / не сонячна сторона
+                label.custom-checkbox
+                  input(type="checkbox" name="features[]" value="Велика кухня або кухня, обʼєднана з вітальнею" hidden)
+                  span.checkbox-circle
+                  |  Велика кухня або кухня, обʼєднана з вітальнею
+                label.custom-checkbox
+                  input(type="checkbox" name="features[]" value="2-3 санвузли" hidden)
+                  span.checkbox-circle
+                  |  2-3 санвузли
+                label.custom-checkbox
+                  input(type="checkbox" name="features[]" value="Гардеробна" hidden)
+                  span.checkbox-circle
+                  |  Гардеробна
+                label.custom-checkbox
+                  input(type="checkbox" name="features[]" value="Не останній поверх" hidden)
+                  span.checkbox-circle
+                  |  Не останній поверх
+                label.custom-checkbox
+                  input(type="checkbox" name="features[]" value="Дитяча та майстер-спальня на різних сторонах квартири тощо" hidden)
+                  span.checkbox-circle
+                  |  Дитяча та майстер-спальня на різних сторонах квартири тощо
+            .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive").first-offset
+              .input-title  Для кого обираєте квартиру?  
+              .radio-group
+                label.radio-btn
+                  input(type="radio", name="option", value="Для себе", hidden checked )
+                  span.custom-radio
+                  | Для себе
+                label.radio-btn
+                  input(type="radio", name="option", value="Для своєї родини", hidden)
+                  span.custom-radio
+                  | Для своєї родини
+                label.radio-btn
+                  input(type="radio", name="option", value="Для батьків", hidden)
+                  span.custom-radio
+                  | Для батьків
+                label.radio-btn
+                  input(type="radio", name="option", value="Для дітей", hidden)
+                  span.custom-radio
+                  | Для дітей
+                label.radio-btn
+                  input(type="radio", name="option", value="Інвестую в нерухомість", hidden)
+                  span.custom-radio
+                  | Інвестую в нерухомість
+            .form-field.form-field-input(data-field-input data-field-name data-status="field--inactive").first-offset
+              .input-title  Ваше ім’я*
+              input(type='text' name="name" placeholder="Ваше ім’я").form-field__input
+              .input-message(data-input-message)
+            .form-field.form-field-input(data-field-input data-field-phone data-status="field--inactive")
+              .input-title  Номер телефону*
+              input(type='text' name="phone" placeholder="Телефон:").form-field__input
+              .input-message(data-input-message)
+          .form__button-wrapper
+            button( type="submit" data-btn-submit).general-btn
+              span.submit-btn__text(data-btn-submit-text) Замовити дзвінок
   .menu-overlay.hidden(data-menu)
     .menu-container
       .menu-list 
         .left-block
           a(href="#about").menu-item 
             span Про проєкт
+          a(href="#flats").menu-item 
+            span Квартири
           a(href="#advantages").menu-item 
             span Переваги
           a(href="#params").menu-item 
             span Характеристики
-          a(href="#flats").menu-item 
-            span Квартири
           a(href="#parking").menu-item 
             span Паркінг та укриття
+          
+        .right-block
           a(href="#gallery").menu-item 
             span Галерея
-        .right-block
-          a(href="#progress").menu-item 
-            span Хід будівництва
-          a(href="#news").menu-item 
-            span Акції та новини
+          a(href="#terms").menu-item 
+            span Умови
+          //- a(href="#progress").menu-item 
+          //-   span Хід будівництва
+          //- a(href="#news").menu-item 
+          //-   span Акції та новини
           a(href="#documents").menu-item 
             span Документація
           a(href="#about-dev").menu-item 

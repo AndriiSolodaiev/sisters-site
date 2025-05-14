@@ -2,7 +2,7 @@ import { popupFactory } from './popupFactory';
 
 export const successPopup = popupFactory(document.querySelector('.thank-you-popup'));
 
-const closeAllBtnRef = document.querySelector('.thank-you-popup__btn');
+const closeAllBtnRef = document.querySelector('[data-ty-close]');
 const overlay = document.querySelector('.overlay')
 overlay.addEventListener("click", function (evt) {
   

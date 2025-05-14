@@ -8,7 +8,8 @@
   flex-direction: column;
   z-index: 2;
   max-width: 100vw;
-  overflow: hidden;
+  // overflow-x: hidden;
+
   .page__content {
     flex-grow: 1;
   }

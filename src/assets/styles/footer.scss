@@ -1,0 +1,107 @@
+.footer {
+  background-color: $bc;
+  padding-top: 32px;
+
+  @include tablet {
+    padding-top: 64px;
+  }
+
+  .contacts__title {
+    @include title-text;
+    color: $wc;
+    margin-bottom: 32px;
+
+    @include tablet {
+      margin-bottom: 64px;
+    }
+  }
+
+  .contacts__content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    align-items: flex-end;
+
+    .map-wrap {
+      width: 100%;
+      aspect-ratio: 1/ 0.637;
+      border-radius: 4px;
+      overflow: hidden;
+
+      .map-simple,
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 48px;
+
+      .map-wrap {
+        width: 60%;
+        aspect-ratio: 1/ 0.637;
+      }
+    }
+
+  }
+
+  .contacts__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    li {
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(249, 242, 235, 0.10);
+
+
+      label {
+        @include tiny-text;
+        color: $wc;
+        margin-bottom: 12px;
+      }
+
+      .contacts__link {
+        @include block-subtitle;
+        color: $wc;
+        display: flex;
+        gap: 12px;
+        justify-content: space-between;
+      }
+
+      @include tablet {
+        padding-bottom: 20px;
+
+        label {
+          margin-bottom: 16px;
+        }
+
+        .contacts__link {
+          font-size: 2.11vw;
+          justify-content: flex-start;
+        }
+      }
+
+
+    }
+  }
+
+  .general-btn {
+    width: 100%;
+    color: $bc;
+    margin-bottom: 32px;
+
+    @include tablet {
+      margin-bottom: 84px;
+    }
+  }
+
+  .icon--sisters-footer {
+    width: 100%;
+    aspect-ratio: 1/0.25;
+  }
+}
