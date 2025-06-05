@@ -280,7 +280,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const options = select.querySelectorAll('.option');
   const hiddenInput = document.querySelector('#hidden-time');
   console.log(select);
-  select.addEventListener('click', () => {
+  select.addEventListener('click', (e) => {
+    if(e.target.closest(".option")) return
     select.classList.toggle('open');
   });
 
@@ -293,8 +294,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // зняти попередню selected
       options.forEach(o => o.classList.remove('selected'));
       option.classList.add('selected');
-
+      console.log(select.classList)
       select.classList.remove('open');
+      console.log(select.classList)
     });
   });
 

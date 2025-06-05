@@ -9,11 +9,12 @@ section {
 
 
 .hero {
-  height: calc(100svh + 378px);
+  min-height: 100svh;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  // justify-content: flex-end;
+  padding-top: 30vh;
   position: relative;
 
   &-img {
@@ -30,7 +31,9 @@ section {
   }
 
   @include tablet {
-    height: 100svh;
+    padding-top: 200px;
+        min-height: 100svh;
+    justify-content: flex-end
   }
 }
 
@@ -70,7 +73,7 @@ section {
     }
   }
 
-  &>img {
+  &>svg {
     width: 92vw;
     height: auto;
     margin-bottom: 20px;
@@ -92,17 +95,18 @@ section {
 
 
     & {
-      font-size: 9.5vw;
+      font-size: 9.4vw;
       color: $wc;
+      white-space: nowrap;
     }
 
     @include tablet {
-      font-size: 7vw;
+      font-size: 6.8vw;
 
     }
 
     @include laptop {
-      font-size: 5vw;
+      font-size: 4.8vw;
     }
   }
 }
@@ -165,7 +169,7 @@ section {
 .info-block {
   padding: 16px;
   border-bottom: 1px solid $border-color;
-
+  
 
   &:last-child {
     border: none;
@@ -205,7 +209,10 @@ section {
     display: flex;
     flex-direction: column;
     gap: 8px;
-
+    &>p, &>a {
+      display: flex;
+      align-items: center;
+    }
     @include tablet {
       font-size: 16px;
 
@@ -223,7 +230,7 @@ section {
   overflow: hidden;
 
   @include tablet {
-    padding-top: 144px;
+    padding-top: 160px;
   }
 
   .section-descr {
@@ -316,7 +323,7 @@ section {
 //PLANNINGS
 
 .plannings {
-  padding-top: 78px;
+  padding-top: 72px;
   padding-bottom: 72px;
 
   @include tablet {
@@ -345,7 +352,7 @@ section {
       z-index: -1;
       top: -10px;
       right: -20px;
-
+      opacity: 1;
       @include tablet {
         width: 90.39px;
         height: 87.33px;
@@ -455,7 +462,7 @@ section {
     width: 100%;
     aspect-ratio: 1/1;
     padding: 37px 0;
-    background-color: $bc;
+    // background-color: $bc;
 
     display: flex;
     justify-content: center;
@@ -468,10 +475,10 @@ section {
   }
 
   &__title {
-    background-color: $bg-color;
+    // background-color: $bg-color;
     display: flex;
     justify-content: space-between;
-    padding: 16px 8px 16px;
+    padding: 16px;
 
     transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 
@@ -490,7 +497,7 @@ section {
   }
 
   &__descr {
-    background-color: $bg-color;
+    // background-color: $bg-color;
     padding: 0 16px;
     padding-bottom: 16px;
     transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -525,7 +532,7 @@ section {
       border-bottom: none;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-
+      // background-color: $border-color;
 
       .general-btn {
         transform: translateY(0);
@@ -537,12 +544,12 @@ section {
         border-bottom-right-radius: 0;
       }
 
-      .planning-card__descr,
-      .planning-card__title {
-        color: $wc;
-        background-color: $bc;
+      // .planning-card__descr,
+      // .planning-card__title {
+      //   color: $wc;
+      //   // background-color: $bc;
 
-      }
+      // }
     }
 
 
@@ -579,10 +586,16 @@ section {
 //Slide-photos sction
 
 .slide-photos {
-  height: 200vh;
+  @include tablet {
+    height: 200vh;
+  }
 
+  // &__wrap {
+  //   height: 200vh;
+  // }
   &__bg {
-    min-height: 90vh;
+    // min-height: 90vh;
+    height: fit-content;
     background-image: url("../images/slide-bg.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -593,6 +606,7 @@ section {
     padding: 32px 0;
 
     @include tablet {
+      min-height: 90vh;
       padding: 64px 0 96px 0;
       border-radius: 12px;
     }
@@ -651,7 +665,7 @@ section {
     @include subtitle-text;
     color: $wc;
     margin-bottom: 32px;
-    text-align: center;
+    
 
     @include tablet {
       font-size: 4.76vw;
@@ -672,16 +686,17 @@ section {
 
 .advantages {
   min-height: 100vh;
-  padding-top: 32px;
+  padding-top: 72px;
   padding-bottom: 32px;
 
   @include tablet {
-    padding-top: 64px;
+    padding-top: 160px;
     padding-bottom: 64px;
   }
 
   &__title-wrap {
     position: relative;
+    
     width: fit-content;
 
     svg {
@@ -691,7 +706,7 @@ section {
       top: 0;
       right: 0;
       transform: translate(47%, 2%);
-      z-index: -1;
+      z-index: 1;
 
       @include tablet {
         width: 4.23vw;
@@ -702,6 +717,9 @@ section {
   }
 
   &__title {
+    position: relative;
+    z-index: 2;
+
     @include title-text;
     color: $wc;
     margin-bottom: 30px;
@@ -721,10 +739,14 @@ section {
     }
   }
 }
-
+.ctrls-line {
+  width: 100%;
+  background-color: rgba(249, 242, 235, 0.10);
+  height: 1px;
+}
 .swiper-advantages-ctrls {
   position: relative;
-  border-bottom: 1px solid rgba(249, 242, 235, 0.10);
+  
   margin-bottom: 32px;
 
   @include tablet {
@@ -781,10 +803,11 @@ section {
 
 .advantages-content {
   margin-bottom: 16px;
-  overflow: hidden;
+  
   min-height: 45vh;
 
   @include tablet {
+    overflow: hidden;
     margin-bottom: 48px;
   }
 }
@@ -843,14 +866,19 @@ section {
     justify-content: center;
     align-items: center;
 
-    img {
+    &>img {
       width: 100%;
       height: 100%;
       object-fit: contain;
       border-radius: 8px;
     }
   }
-
+  .media-part.map-wrap {
+    overflow: visible;
+    @include tablet {
+      overflow: hidden;
+    }
+  }
   @include tablet {
     flex-direction: row;
     gap: 40px;
@@ -891,13 +919,16 @@ section {
 
   .swiper-map {
     margin-bottom: 20px;
+    position: relative;
 
     @include tablet {
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
+      width: calc(100% - 60px);
       padding: 16px;
+      overflow: hidden;
+      border-radius: 8px
     }
 
     .swiper-slide {
@@ -912,6 +943,18 @@ section {
       background-color: $wc;
       border-radius: 4px;
       transition: background-color 0.3s ease-in-out;
+
+      svg {
+        display: none;
+      }
+
+      &.active {
+        svg {
+          display: block;
+          width: 16px;
+          height: 16px;
+        }
+      }
 
       &:hover,
       &:focus {
@@ -931,7 +974,11 @@ section {
     }
   }
 }
-
+// .map {
+//   .gm-style .gm-style-iw-c {
+//     background-color: $bg-color;
+//   }
+// }
 .advantage-panel[data-id="safety"] .media-part {
   aspect-ratio: 0;
 }
@@ -947,6 +994,7 @@ section {
   .swiper-btns-wrap {
     width: 100%;
     margin-top: 16px;
+    margin-bottom: 0;
     border-color: rgba(249, 242, 235, 0.10);
 
     .swiper-button-prev,
@@ -962,16 +1010,21 @@ section {
 
   .swiper-slide {
 
-    aspect-ratio: 1/ 1.29
+    aspect-ratio: 1/ 1.29;
+    &>img{
+      object-fit: cover;
+      border-radius: 8px;
+      height: 100%;
+    }
   }
 }
 
 .params {
-  padding-top: 32px;
+  padding-top: 72px;
   // padding-bottom: 32px;
 
   @include tablet {
-    padding-top: 96px;
+    padding-top: 160px;
     // padding-bottom: 64px;
   }
 
@@ -1049,7 +1102,7 @@ section {
 }
 
 .parking {
-  padding-top: 32px;
+  padding-top: 72px;
   padding-bottom: 36px;
   // height: 200vh;
   position: relative;
@@ -1072,12 +1125,15 @@ section {
   &-card {
     background-image: url("../images/parking/parking-bg1.jpg");
     background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     width: 100%;
     position: sticky;
     top: 68px;
     left: 0;
     z-index: 3;
-    height: calc(100vh - 68px);
+    
     overflow: hidden;
     border-radius: 8px;
     padding: 32px 16px;
@@ -1085,7 +1141,19 @@ section {
 
     &.safe {
       background-image: url("../images/parking/parking-bg2.jpg");
-      background-position: left;
+      
+      
+      .parking-card__img-wrap {
+        
+          margin-top: 64px;
+        
+  
+        @include tablet {
+         
+            margin-top: 0;
+          
+        }
+      }
     }
 
     &:first-child {
@@ -1166,7 +1234,8 @@ section {
       aspect-ratio: 1 / 0.46;
       border-radius: 4px;
       overflow: hidden;
-
+      margin-top: 32px;
+      
       img {
         width: 100%;
         height: 100%;
@@ -1178,6 +1247,8 @@ section {
         width: 35%;
         aspect-ratio: 1 / 1.32;
         border-radius: 8px;
+        margin-top: 0;
+        
       }
     }
   }
@@ -1218,7 +1289,11 @@ section {
   }
 
   ;
-
+  .swiper-btns-wrap{
+    &.hidden {
+      opacity: 0;
+    }
+  }
   .swiper-btns-wrap,
   .swiper-button-prev,
   .swiper-button-next {
@@ -1230,8 +1305,13 @@ section {
 
 .swiper-gallery-ctrls {
   position: relative;
-  border-bottom: 1px solid rgba(41, 41, 37, 0.10);
+  
   margin-bottom: 32px;
+  .ctrls-line {
+    
+    background-color: rgba(41, 41, 37, 0.10);
+    
+  }
 
   @include tablet {
     margin-bottom: 64px;
@@ -1294,10 +1374,13 @@ section {
 
   .swiper-slide {
     aspect-ratio: 1 / 1.21;
+    border-radius: 8px;
+    overflow: hidden;
 
     img {
       width: 100%;
-      height: 100%
+      height: 100%;
+      object-fit: cover;
     }
   }
 
@@ -1435,10 +1518,14 @@ section {
 }
 
 .swiper-scrollbar {
+  position: relative !important;
   background-color: transparent;
-  bottom: -15px !important;
-  padding-top: 20px;
-
+ left: 0 !important; 
+  margin-top: 12px;
+  // margin-bottom: 8px;
+  @include tablet {
+    margin-top: 16px;
+  }
 }
 
 .swiper-scrollbar-drag {
@@ -1446,14 +1533,16 @@ section {
   height: 4px;
 
 }
-
+// .gallery .swiper-scrollbar {
+//   padding-top: 8px;
+// }
 .terms {
   padding-top: 36px;
-  padding-bottom: 36px;
+  padding-bottom: 72px;
 
   @include tablet {
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 160px;
   }
 
   .general-btn {
@@ -1472,7 +1561,7 @@ section {
     @include tablet {
       margin-bottom: 64px;
       display: flex;
-      align-items: flex-end;
+      align-items: baseline;
       gap: 40px;
 
     }
@@ -1480,13 +1569,14 @@ section {
 
   &__title {
     @include title-text;
+    
     opacity: 0.5;
     transition: all 0.3s ease-in-out;
     margin-bottom: 12px;
     line-height: 1;
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
-
+    white-space: nowrap;
     &:hover,
     &:focus {
       opacity: 0.7;
@@ -1575,10 +1665,14 @@ section {
       h3 {
         margin-bottom: 16px;
         font-size: 2.11vw;
+        display: flex;
+        align-items: center;
+
 
         &>svg {
           margin-right: 10px;
           display: inline;
+          margin-bottom: 0;
         }
       }
     }
@@ -1749,7 +1843,7 @@ section {
   @include tablet {
     padding-bottom: 20px;
     padding-top: 64px;
-    height: 100svh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
   }
@@ -1773,7 +1867,7 @@ section {
     @include title-text;
     color: $wc;
     margin-bottom: 12px;
-
+    white-space: nowrap;
     @include tablet {}
   }
 
@@ -1824,5 +1918,55 @@ section {
     svg {
       margin-right: 8px;
     }
+  }
+}
+
+.news{
+  .gallery-title {
+    margin-bottom: 32px;
+    @include tablet {
+      margin-bottom: 64px;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+@include tablet {
+      flex-direction: row;
+      column-gap: 20px;
+      flex-wrap: wrap;
+
+    }
+  }
+  &__link{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(41, 41, 37, 0.10);
+    @include tablet {
+      gap: 16px;
+      padding-bottom: 20px;
+      width: calc((100% - 20px) / 2 );
+      &:hover, &:focus {
+        .news__title {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__data{
+    @include tiny-text;
+    line-height: 177%;
+  } 
+
+  &__title {
+    @include block-subtitle;
+    @include tablet {
+      font-size: 2.11vw;
+      transition: text-decoration 0.3s ease-in-out;
+    } 
   }
 }

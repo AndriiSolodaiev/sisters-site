@@ -26,13 +26,13 @@ document.body.addEventListener('click', function(evt) {
   const btnUp = evt.target.closest('[data-btn-up]');
   const btnMenuTarget = evt.target.closest('[data-menu-button]');
   const menu = document.querySelector('[data-menu]');
-
+  const menuLink = evt.target.closest('a.menu-item');
   const closeBig = evt.target.closest('[data-call-us-modal-close--big]');
   // const formBig = evt.target.closest('[data-call-us-modal--big]');
   const btnBig = evt.target.closest('[data-call-us-btn--big]');
   const overflowBig = document.querySelector('[data-call-us__overflow--big]');
 
-  if (btnMenuTarget) {
+  if (btnMenuTarget || menuLink) {
     menu.classList.toggle('hidden');
     header.classList.toggle('menu-is-open');
     if (menu.classList.contains('hidden')) {
@@ -40,7 +40,7 @@ document.body.addEventListener('click', function(evt) {
     } else {
       window.dispatchEvent(new Event('stop-scroll'));
     }
-    menuAnimation();
+    // menuAnimation();
     return;
   }
   if (evt.target === menuOverlay) {
@@ -57,10 +57,13 @@ document.body.addEventListener('click', function(evt) {
       window.dispatchEvent(new Event('stop-scroll'));
       return overflow.classList.remove('hidden');
     }
+    if (btn.dataset.callUsBtn) {
+    }
     return;
   }
-  if (close) {
+  if (close || closeBig) {
     window.dispatchEvent(new Event('start-scroll'));
+    overflowBig.classList.add('hidden');
     return overflow.classList.add('hidden');
   }
   if (evt.target === overflow) {
@@ -116,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
           '<',
         )
         .from(
-          'header',
+          '.header-bg',
           {
             yPercent: -100,
           },

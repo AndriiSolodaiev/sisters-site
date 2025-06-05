@@ -6,7 +6,7 @@
 // intlTelInput(input, {
 //   utilsScript: 'path/to/utils.js',
 // });
-
+import googleMap from '../map/map';
 import { contactFormFooter } from './contactFormFooter';
 
 const footer = document.querySelector('footer');
@@ -16,6 +16,7 @@ const initFooter = () => {
   createFormValidRef.forEach(el => {
     contactFormFooter(el);
   });
+  googleMap();
 };
 
 if (footer) {

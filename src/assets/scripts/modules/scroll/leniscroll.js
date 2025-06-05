@@ -36,3 +36,20 @@ export const initSmoothScrolling = () => {
   isInited = true;
   return lenis;
 };
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    console.log(targetId);
+    const targetElement = document.querySelector(targetId);
+    console.log(targetElement);
+    console.log(lenis);
+    if (targetElement) {
+      history.pushState(null, '', targetId);
+      window.dispatchEvent(new Event('start-scroll'));
+      lenis.scrollTo(targetId);
+    } else {
+      window.location.href = `/${targetId}`;
+    }
+  });
+});

@@ -84,17 +84,18 @@ gsap.from('.advantages__title-wrap svg', {
   y: 20,
 });
 
-gsap.from('.plannings-title__svg-wrap svg', {
+gsap.fromTo('.plannings-title__svg-wrap svg', {
   scrollTrigger: {
     trigger: '.plannings-title__svg-wrap',
 
     start: 'top center',
     end: 'bottom center',
-    // markers: { startColor: '#dfdcff', endColor: 'transparent' },
+    // markers: true,
   },
   opacity: 0,
   y: 20,
-});
+}, {opacity: 1,
+  y: 0,});
 
 gsap.from('.icon--sister', {
   scrollTrigger: {

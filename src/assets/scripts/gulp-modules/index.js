@@ -1,12 +1,13 @@
 import Swiper, { Navigation, Scrollbar } from 'swiper';
 import { gsap, ScrollTrigger, CustomEase } from 'gsap/all';
-import googleMap from '../modules/map/map';
+// import googleMap from '../modules/map/map';
 import { initSmoothScrolling } from '../modules/scroll/leniscroll';
 import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin';
+import axios from 'axios';
 import '../animations';
 initSmoothScrolling();
 gsap.registerPlugin(ScrollTrigger, CustomEase, MorphSVGPlugin);
-googleMap();
+// googleMap();
 
 document.addEventListener('DOMContentLoaded', () => {
   const video = document.querySelector('.video');
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const swiperPlannings = new Swiper('.swiper-plannings ', {
   modules: [Navigation],
-  speed: 1200,
+  speed: 600,
 
   slidesPerView: 1.3,
   spaceBetween: 16,
@@ -57,7 +58,7 @@ const swiperPlannings = new Swiper('.swiper-plannings ', {
 });
 
 const swiperSlidePhotos = new Swiper('.swiper-slide-photos', {
-  speed: 1200,
+  speed: 600,
   slidesPerView: 1.2,
   spaceBetween: 20,
 
@@ -70,7 +71,8 @@ const swiperSlidePhotos = new Swiper('.swiper-slide-photos', {
     },
   },
 });
-const startPos = window.innerWidth > 768 ? 'top top' : 'top +=68px';
+if(window.innerWidth > 768 ){
+const startPos = 'top +=68px';
 gsap.timeline({
   scrollTrigger: {
     trigger: '.slide-photos',
@@ -84,9 +86,9 @@ gsap.timeline({
     },
   },
 });
-
+}
 const swiperAdvantagesCtrls = new Swiper('.swiper-advantages-ctrls', {
-  speed: 1200,
+  speed: 600,
   modules: [Scrollbar],
   slidesPerView: 'auto',
   spaceBetween: 24,
@@ -101,17 +103,18 @@ const swiperAdvantagesCtrls = new Swiper('.swiper-advantages-ctrls', {
     draggable: true,
   },
 });
-
-gsap.to('body', {
+const tlColorBG = gsap.timeline({scrollTrigger: {
+  trigger: '.advantages',
+  start: 'top center',
+  end: 'bottom center', // коли верх секції доходить до центру екрану
+  toggleActions: 'play reverse play reverse',
+}})
+tlColorBG.to('.page__content', {
   backgroundColor: '#3F4CAA',
-  ease: 'none',
-
-  scrollTrigger: {
-    trigger: '.advantages',
-    start: 'top center', // коли верх секції доходить до центру екрану
-    toggleActions: 'play reverse play reverse',
-  },
-});
+  ease: 'none', 
+}).fromTo(".advantages__title", {color:"#292925" }, {
+  color: "#F9F2EB"
+}, "<");
 
 document.addEventListener('DOMContentLoaded', function() {
   const slides = document.querySelectorAll('.swiper-advantages-ctrls .swiper-slide');
@@ -166,9 +169,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-const swiperMap = new Swiper('.swiper-map', {
+export const swiperMap = new Swiper('.swiper-map', {
   modules: [Scrollbar],
-  speed: 1200,
+  speed: 600,
 
   slidesPerView: 'auto',
   spaceBetween: 8,
@@ -179,7 +182,7 @@ const swiperMap = new Swiper('.swiper-map', {
   },
 });
 const swiperSafety = new Swiper('.swiper-safety', {
-  speed: 1200,
+  speed: 600,
   modules: [Navigation],
   slidesPerView: 1,
   spaceBetween: 16,
@@ -222,7 +225,7 @@ document.querySelector('.swiper-slide[data-id="riel"]')?.addEventListener('click
     }, 500);
   } else if (window.innerWidth > 768) {
     document.querySelectorAll('.riel-item').forEach((item, index) => {
-      const delay = 1300 + index * 200;
+      const delay = 500 + index * 200;
       console.log(item, delay);
       setTimeout(() => {
         animateToCircle(item);
@@ -264,40 +267,62 @@ gsap.to('.filler img', {
 });
 
 //gallery
+let galleryImages = {}; // Буде наповнений з JSON
 
-const swiperGallery = new Swiper('.swiper-gallery ', {
+// Ініціалізація Swiper галереї
+const swiperGallery = new Swiper('.swiper-gallery', {
   modules: [Navigation],
-  speed: 1200,
-
+  speed: 600,
   slidesPerView: 1,
-  spaceBetween: 32,
+  spaceBetween: 20,
   navigation: {
     prevEl: '[data-gallery-btn-prev]',
     nextEl: '[data-gallery-btn-next]',
   },
-
   breakpoints: {
-    // 360: {
-    //   slidesPerView: 1.1,
-    //   spaceBetween: 8,
-    // },
     768: {
       slidesPerView: 3,
+    },
+    1366: {
+      slidesPerView: 4,
+    },
+  },
+ 
+  on: {
+    init(swiper) {
+      handleNavVisibility(swiper);
+    },
+    resize(swiper) {
+      handleNavVisibility(swiper);
     },
   },
 });
 
-const galleryImages = {
-  territory: ['./images/gallery/territory1.jpg', './images/gallery/territory2.jpg'],
-  children: ['./images/gallery/children1.jpg', './images/gallery/children2.jpg'],
-  art: ['./images/gallery/art1.jpg', './images/gallery/art2.jpg'],
-  hall: ['./images/gallery/hall1.jpg', './images/gallery/hall2.jpg'],
-  floor: ['./images/gallery/floor1.jpg', './images/gallery/floor2.jpg'],
-  parking: ['./images/gallery/parking1.jpg', './images/gallery/parking2.jpg'],
-  safe: ['./images/gallery/safe1.jpg', './images/gallery/safe2.jpg'],
-};
+function handleNavVisibility(swiper) {
+  const btnsWrap = document.querySelector('.gallery .swiper-btns-wrap');
+  if (!btnsWrap) return;
 
-// Ініціалізація Swiper
+  // Підрахунок лише реальних слайдів (без дублікатів)
+  const realSlideCount = swiper.slides.length - swiper.loopedSlides * 2 || swiper.slides.length;
+
+  const currentSlidesPerView = swiper.params.slidesPerView;
+
+  // Якщо slidesPerView — 'auto', треба брати swiper.slidesPerViewDynamic()
+  const slidesToCheck = currentSlidesPerView === 'auto'
+    ? swiper.slidesPerViewDynamic()
+    : currentSlidesPerView;
+
+  if (realSlideCount <= slidesToCheck) {
+    
+    btnsWrap.classList.add('hidden');
+  } else {
+    btnsWrap.classList.remove('hidden');
+  }
+}
+
+
+
+// Контрл-свайпер
 const swiperGalleryCtrls = new Swiper('.swiper-gallery-ctrls', {
   modules: [Scrollbar],
   slidesPerView: 'auto',
@@ -309,15 +334,39 @@ const swiperGalleryCtrls = new Swiper('.swiper-gallery-ctrls', {
     draggable: true,
   },
 });
-// Оновити слайди галереї
+
+// Отримання зображень з бекенду
+async function fetchGalleryImages() {
+  const formData = new FormData();
+  formData.append('action', 'gallery');
+
+  try {
+    const response = await axios.post('/wp-admin/admin-ajax.php', formData);
+    const galleries = response.data.galleies || [];
+
+    // Перетворити у формат { territory: [img1, img2], ... }
+    galleries.forEach(group => {
+      const categoryName = group.name;
+      const imageUrls = group.gallery.map(item => item.img);
+      galleryImages[categoryName] = imageUrls;
+    });
+
+    loadGallery('territory'); // Початкове завантаження
+  } catch (error) {
+    console.error('Помилка при завантаженні галереї:', error);
+  }
+}
+
+// Відображення слайдів за категорією
 function loadGallery(category) {
   const wrapper = document.querySelector('.swiper-gallery .swiper-wrapper');
-  wrapper.innerHTML = ''; // Очистити попередні слайди
+  wrapper.innerHTML = '';
 
   if (galleryImages[category]) {
-    galleryImages[category].forEach(src => {
+    galleryImages[category].forEach((src, index) => {
       const slide = document.createElement('div');
       slide.classList.add('swiper-slide');
+      gsap.from(slide, { opacity: 0, yPercent: 20, delay: index * 0.05 });
 
       const img = document.createElement('img');
       img.src = src;
@@ -327,17 +376,16 @@ function loadGallery(category) {
       wrapper.appendChild(slide);
     });
 
-    swiperGallery.update(); // Перезавантажити Swiper
-    swiperGallery.slideTo(0); // Повернутись на перший слайд
+    swiperGallery.update();
+    swiperGallery.slideTo(0);
   }
 }
 
-// Слухач на контролерах
+// Обробка кліків на контролери
 document.querySelectorAll('.swiper-gallery-ctrls .swiper-slide').forEach(btn => {
   btn.addEventListener('click', () => {
     const category = btn.dataset.id;
 
-    // Активний клас
     document.querySelectorAll('.swiper-gallery-ctrls .swiper-slide').forEach(el => {
       el.classList.remove('active-slide');
     });
@@ -347,9 +395,8 @@ document.querySelectorAll('.swiper-gallery-ctrls .swiper-slide').forEach(btn => 
   });
 });
 
-// Початкове завантаження
-loadGallery('territory');
-
+// Перший запуск
+fetchGalleryImages();
 //terms
 document.addEventListener('DOMContentLoaded', () => {
   const titles = document.querySelectorAll('.terms__title');
@@ -439,4 +486,48 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+
+
+ const groups = [
+        { wrapperSelector: '[data-field-rooms]', hiddenInputName: 'rooms' },
+        { wrapperSelector: '[data-field-features]', hiddenInputName: 'features' }
+    ];
+
+    groups.forEach(group => {
+        const wrapper = document.querySelector(group.wrapperSelector);
+        if (!wrapper) return;
+
+        const checkboxes = wrapper.querySelectorAll('input[type="checkbox"]');
+        const hiddenInput = document.querySelector(`input[name="${group.hiddenInputName}"]`);
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                const selectedValues = Array.from(checkboxes)
+                    .filter(cb => cb.checked)
+                    .map(cb => cb.value);
+                hiddenInput.value = selectedValues.join(', ');
+            });
+        });
+    });
+
+    const radioButtons = document.querySelectorAll('input[type="radio"][name="option"]');
+    const hiddenInput = document.querySelector('input[type="hidden"][name="for-whom"]');
+
+    if (!hiddenInput || radioButtons.length === 0) return;
+
+    // Записати значення вибраного за замовчуванням
+    const checked = document.querySelector('input[type="radio"][name="option"]:checked');
+    if (checked) {
+        hiddenInput.value = checked.value;
+    }
+
+    // Оновлювати при зміні
+    radioButtons.forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (radio.checked) {
+                hiddenInput.value = radio.value;
+            }
+        });
+    });
 });

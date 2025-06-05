@@ -55,18 +55,18 @@ html(lang="en" data-status="local")
     block header
 
     // END HEADER
-    .page__inner(data-scroll-container data-barba="container" data-barba-namespace="home" )
+    .page__inner(data-scroll-container )
       .page__content
         block content
-    block scripts
+   
 
 
     block footer
+    
       // END FOOTER
     block modal
       include ../includes/thank-you-popup.pug
-
+    block scripts
     <div class="reloader">
       <div class="loader"></div>
     </div>
-//- include ./barba.html
