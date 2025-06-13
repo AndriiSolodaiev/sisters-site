@@ -1388,7 +1388,191 @@ section {
     margin-bottom: 20px;
   }
 }
+//progress
+.progress-title {
+  @include title-text;
+  margin-bottom: 34px;
 
+  @include tablet {
+    margin-bottom: 45px;
+  }
+}
+
+.progress {
+  padding-top: 36px;
+  padding-bottom: 36px;
+
+  @include tablet {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  ;
+  .swiper-btns-wrap{
+    &.hidden {
+      opacity: 0;
+    }
+  }
+  .swiper-btns-wrap,
+  .swiper-button-prev,
+  .swiper-button-next {
+    @include tablet {
+      width: 100%;
+    }
+  }
+}
+
+.swiper-progress-queue-ctrls, .swiper-progress-month-ctrls {
+  position: relative;
+  
+  margin-bottom: 32px;
+  .ctrls-line {
+    
+    background-color: rgba(41, 41, 37, 0.10);
+    
+  }
+
+  @include tablet {
+    margin-bottom: 64px;
+  }
+
+  .swiper-scrollbar-drag {
+    background-color: #29292557;
+  }
+
+  .swiper-slide {
+    width: fit-content;
+    @include tiny-text;
+    position: relative;
+    color: $bc;
+    padding-bottom: 20px;
+    cursor: pointer;
+
+    &.active-slide {
+      font-weight: 700;
+
+
+      &::after {
+        content: "";
+        background-color: $bc;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+
+      }
+    }
+
+    @include tablet {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0%;
+        background-color: #E4DED7;
+        height: 2px;
+        transition: width 0.25s ease-in-out;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+
+    }
+  }
+
+
+
+}
+
+.swiper-progress-gallery {
+  margin-bottom: 16px;
+
+  .swiper-slide {
+    aspect-ratio: 1 / 1.21;
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include tablet {
+    margin-bottom: 20px;
+  }
+}
+
+.queue-dates {
+  padding: 16px;
+  border-radius: 8px;
+background: #A4BAD2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+  .date-wrap {
+    width: 100%;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(41, 41, 37, 0.10);
+  }
+  .date-title{
+    @include tiny-text;
+    margin-bottom: 8px;
+  }
+  .date-value {
+    @include general-text-bold;
+  }
+  @include tablet {
+    padding: 20px;
+    flex-direction: row;
+    gap: 20px;
+    .date-wrap {
+      width: calc(50% - 10px);
+    }
+  }
+}
+.swiper-progress-percents {
+  margin-bottom: 16px;
+  @include tablet {
+    margin-bottom: 20px;
+  }
+  .swiper-slide {
+    border-radius: 8px;
+border: 1px solid rgba(41, 41, 37, 0.10);
+background: var(--White, #F9F2EB);
+padding: 16px;
+display: flex;
+  flex-direction: column;
+  height: auto ;    
+    .percents-title {
+      @include tiny-text;
+      margin-bottom: 4px;
+    }
+    .percent-value {
+      margin-top: auto;
+      color: $bc;
+font-size: 48px;
+font-weight: 700;
+margin-bottom: 16px;
+    }
+    .percent-line{
+      height: 4px;
+      background: rgba(41, 41, 37, 0.10);
+      width: 100%;
+
+    }
+    .percent-fill{
+      height: 100%;
+      background-color: $accent-color;
+    }
+  }
+}
 //terms START
 .swiper-riel {
   position: relative;

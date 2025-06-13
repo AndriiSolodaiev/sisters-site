@@ -530,17 +530,126 @@ block content
           <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z" fill="#292925"/>
         </svg>
   //- section.progress 
-  //-   h2.progress-title Слідкуйте 
+  //-   h2.progress-title.text-anim Слідкуйте 
   //-     br
   //-     | за процесом будівництва
   //-   .swiper-progress-queue-ctrls
   //-     .swiper-wrapper
-  //-       .swiper-slide.active-slide(data-id="territory") Територія
-  //-       .swiper-slide(data-id="children") Для дітей
-  //-       .swiper-slide(data-id="art") Арт обʼєкти
-  //-       .swiper-slide(data-id="hall") Хол
-  //-       .swiper-slide(data-id="floor") Житловий поверх
-  //-   .progress-content
+  //-       .swiper-slide.active-slide(data-queue="1") Черга 1
+  //-       .swiper-slide(data-queue="2") Черга 2
+  //-       .swiper-slide(data-queue="3") Черга 3
+  //-       .swiper-slide(data-queue="4") Черга 4
+  //-       .swiper-slide(data-queue="floor") Черга 5
+  //-   .progress-queue-content 
+  //-     .queue-dates 
+  //-       .date-wrap 
+  //-         h3.date-title Дата оновлення
+  //-         p.date-value 01.01.2025
+  //-       .date-wrap 
+  //-         h3.date-title Дата оновлення
+  //-         p.date-value 01.01.2025
+  //-     .swiper-progress-month-ctrls
+  //-       .swiper-wrapper
+  //-         .swiper-slide.active-slide(data-year="2025" data-month="april") Квітень 2025
+  //-         .swiper-slide(data-year="2025" data-month="march") Березень 2025
+  //-         .swiper-slide(data-year="2025" data-month="february") Лютий 2025
+  //-         .swiper-slide(data-year="2025" data-month="april") Квітень 2025
+  //-     .progress-gallery
+  //-       .swiper-progress-gallery 
+  //-         .swiper-wrapper 
+  //-           .swiper-slide
+  //-             img(src="", alt="")
+  //-       .swiper-btns-wrap
+  //-         .swiper-button-prev(data-progress-gallery-btn-prev)
+  //-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  //-             <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z" fill="#292925"/>
+  //-           </svg>
+  //-         .swiper-button-next(data-progress-gallery-btn-next)
+  //-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  //-             <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z" fill="#292925"/>
+  //-           </svg>
+  //-     .progress-percents 
+  //-       .swiper-progress-percents 
+  //-         .swiper-wrapper 
+  //-           .swiper-slide
+  //-             h3.percents-title(data-percent-title="Фундамент") Фундамент
+  //-             p.percent-value 100%
+  //-             .percent-line(data-percent="100%")
+  //-               .percent-fill
+  //-           .swiper-slide
+  //-             h3.percents-title(data-percent-title="Вікна") Вікна
+  //-             p.percent-value 0%
+  //-             .percent-line(data-percent="0%")
+  //-               .percent-fill
+  //-           .swiper-slide
+  //-             h3.percents-title(data-percent-title="Двері") Двері
+  //-             p.percent-value 10%
+  //-             .percent-line(data-percent="10%")
+  //-               .percent-fill
+  //-       .swiper-btns-wrap
+  //-         .swiper-button-prev(data-percents-btn-prev)
+  //-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  //-             <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z" fill="#292925"/>
+  //-           </svg>
+  //-         .swiper-button-next(data-percents-btn-next)
+  //-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  //-             <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z" fill="#292925"/>
+  //-           </svg>
+  section.progress.container
+    h2.progress-title.text-anim Слідкуйте 
+      br
+      | за процесом будівництва
+
+    //- Контрол черг — JS динамічно вставляє .swiper-slide по JSON
+    .swiper-progress-queue-ctrls
+      .swiper-wrapper
+        //- JS рендерить тут черги (черга 1, 2, 3...)
+      .ctrls-line 
+      .swiper-scrollbar
+    //- Контент черги
+    .progress-queue-content
+
+      //- Блок дат
+      .queue-dates
+        .date-wrap
+          h3.date-title Дата оновлення
+          p.date-value
+        .date-wrap
+          h3.date-title Дата завершення
+          p.date-value
+      .progress-percents
+        .swiper-progress-percents
+          .swiper-wrapper
+            //- JS вставляє тут плашки з прогресом
+        .swiper-btns-wrap
+          .swiper-button-prev(data-percents-btn-prev)
+            svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewBox="0 0 24 24", fill="none")
+              path(fill-rule="evenodd", clip-rule="evenodd", d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z", fill="#292925")
+          .swiper-button-next(data-percents-btn-next)
+            svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewBox="0 0 24 24", fill="none")
+              path(fill-rule="evenodd", clip-rule="evenodd", d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z", fill="#292925")
+      //- Контрол місяців — також динамічно рендериться
+      .swiper-progress-month-ctrls
+        .swiper-wrapper
+        .ctrls-line 
+        .swiper-scrollbar
+          //- JS вставляє сюди список місяців
+
+      //- Галерея
+      .progress-gallery
+        .swiper-progress-gallery
+          .swiper-wrapper
+            //- JS вставляє слайди з картинками
+        .swiper-btns-wrap
+          .swiper-button-prev(data-progress-gallery-btn-prev)
+            svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewBox="0 0 24 24", fill="none")
+              path(fill-rule="evenodd", clip-rule="evenodd", d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z", fill="#292925")
+          .swiper-button-next(data-progress-gallery-btn-next)
+            svg(xmlns="http://www.w3.org/2000/svg", width="24", height="24", viewBox="0 0 24 24", fill="none")
+              path(fill-rule="evenodd", clip-rule="evenodd", d="M15.5859 12.0001L8.29297 4.70718L9.70718 3.29297L18.4143 12.0001L9.70718 20.7072L8.29297 19.293L15.5859 12.0001Z", fill="#292925")
+
+      //- Плашки з відсотками
+      
   section.terms.container(id="terms")
     .terms__title__wrap 
       h2.terms__title.active.text-anim(data-id="terms") Умови оплати

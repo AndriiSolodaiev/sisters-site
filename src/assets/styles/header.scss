@@ -166,7 +166,7 @@
   padding-top: 76px;
   transition: max-height 0.5s ease-in-out;
   max-height: 600px;
-
+  overflow: hidden;
   @include tablet {
     max-height: 400px;
     display: flex;
