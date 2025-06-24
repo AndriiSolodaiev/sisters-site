@@ -135,7 +135,7 @@ section {
   transition: all 0.3s ease-in-out;
 
   @include tablet {
-    width: 67vw;
+    // width: 67vw;
 
     &:hover,
     &:focus {
@@ -152,9 +152,9 @@ section {
   background: $bg-color;
   border-radius: 4px;
 
-  @include tablet {
-    width: 67vw;
-  }
+  // @include tablet {
+  //   width: 67vw;
+  // }
 
   @include laptop {
     width: 47vw;
@@ -596,7 +596,7 @@ section {
   &__bg {
     // min-height: 90vh;
     height: fit-content;
-    background-image: url("../images/slide-bg.jpg");
+    background-image: url("../images/slide-bg.svg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -1103,7 +1103,7 @@ section {
 
 .parking {
   padding-top: 72px;
-  padding-bottom: 36px;
+  // padding-bottom: 36px;
   // height: 200vh;
   position: relative;
   // display: flex;
@@ -1123,14 +1123,14 @@ section {
   }
 
   &-card {
-    background-image: url("../images/parking/parking-bg1.jpg");
+    background-image: url("../images/parking/parking-bg1.svg");
     background-position: right;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     width: 100%;
     position: sticky;
-    top: 68px;
+    top: 78px;
     left: 0;
     z-index: 3;
     
@@ -1140,7 +1140,7 @@ section {
 
 
     &.safe {
-      background-image: url("../images/parking/parking-bg2.jpg");
+      background-image: url("../images/parking/parking-bg2.svg");
       
       
       .parking-card__img-wrap {
@@ -1167,7 +1167,7 @@ section {
       align-items: stretch;
       border-radius: 12px;
       padding: 64px 20px;
-      height: calc(100vh - 68px);
+      height: calc(100vh - 88px);
 
       &:first-child {
         margin-bottom: 100px;
@@ -1280,8 +1280,8 @@ section {
 }
 
 .gallery {
-  padding-top: 36px;
-  padding-bottom: 36px;
+  padding-top: 72px;
+  // padding-bottom: 36px;
 
   @include tablet {
     padding-top: 80px;
@@ -1721,7 +1721,7 @@ margin-bottom: 16px;
 //   padding-top: 8px;
 // }
 .terms {
-  padding-top: 36px;
+  padding-top: 72px;
   padding-bottom: 72px;
 
   @include tablet {

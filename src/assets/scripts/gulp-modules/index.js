@@ -64,14 +64,14 @@ const swiperSlidePhotos = new Swiper('.swiper-slide-photos', {
 
   breakpoints: {
     768: {
-      slidesPerView: 3.4,
+      slidesPerView: 2.4,
     },
     1366: {
       slidesPerView: 4.5,
     },
   },
 });
-if(window.innerWidth > 768 ){
+if(window.innerWidth >= 768 ){
 const startPos = 'top +=68px';
 gsap.timeline({
   scrollTrigger: {
@@ -534,355 +534,355 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 //progress
-let progressData = {
-  "1": {
-    "updateDate": "01.06.2025",
-    "finishDate": "01.12.2025",
-    "months": {
+// let progressData = {
+//   "1": {
+//     "updateDate": "01.06.2025",
+//     "finishDate": "01.12.2025",
+//     "months": {
       
-      "2025-april": {
-        "gallery": ["/wp-content/themes/3d/assets/images/flats/flat1.jpg", "/wp-content/themes/3d/assets/images/flats/flat2.jpg"],
-        "progress": [
-          { "title": "Фундамент", "value": 100 },
-          { "title": "Вікна", "value": 40 },
-          { "title": "Каркас (підземна частина)", "value": 100 },
-          { "title": "Радіатори", "value": 10 },
-          { "title": "Каркас (наземна частина)", "value": 100 },
-          { "title": "Двері", "value": 40 },
-          { "title": "Зовнішні стіни та перегородки", "value": 100 },
-          { "title": "Ліфти", "value": 40 }
-        ]
-      },
-      "2025-march": {
-        "gallery": ["/wp-content/themes/3d/assets/images/flats/flat1.jpg","/wp-content/themes/3d/assets/images/flats/flat2.jpg","/wp-content/themes/3d/assets/images/flats/flat3.jpg"],
-        "progress": [
-          { "title": "Фундамент", "value": 95 },
-          { "title": "Вікна", "value": 20 }
-        ]
-      }
-    }
-  },
-  "2": {
-    "updateDate": "01.03.2025",
-    "finishDate": "01.12.2027",
-    "months": {
-      "2025-april": {
-        "gallery": ["/wp-content/themes/3d/assets/images/flats/flat3.jpg"],
-        "progress": [
-          { "title": "Фундамент", "value": 80 },
-          { "title": "Вікна", "value": 10 }
-        ]
-      }
-    }
-  }
-};
-progressData = {
-  "1": {
-    updateDate: "10.06.2025",
-    finishDate: "12.12.2025",
-    progress: [
-      { "title": "Фундамент", "value": 100 },
-          { "title": "Вікна", "value": 40 },
-          { "title": "Каркас (підземна частина)", "value": 100 },
-          { "title": "Радіатори", "value": 10 },
-          { "title": "Каркас (наземна частина)", "value": 100 },
-          { "title": "Двері", "value": 40 },
-          { "title": "Зовнішні стіни та перегородки", "value": 100 },
-          { "title": "Ліфти", "value": 40 }
-    ],
-    months: {
-      "2025-april": {
-        gallery: ["/assets/images/flats/flat1.jpg", "/assets/images/flats/flat2.jpg"]
-      },
-      "2025-march": {
-        gallery: ["/assets/images/flats/flat2.jpg", "/assets/images/flats/flat3.jpg"]
-      }
-    }
-  },
-  "2": {
-    updateDate: "01.05.2025",
-    finishDate: "30.11.2025",
-    progress: [
-      { title: "Фундамент", value: 100 },
-      { title: "Стіни", value: 90 },
-      { title: "Оздоблення", value: 30 },
-    ],
-    months: {
-      "2025-may": {
-        gallery: ["/assets/images/flats/flat3.jpg", "/assets/images/flats/flat2.jpg"]
-      },
-      "2025-april": {
-        gallery: ["/assets/images/flats/flat1.jpg", "/assets/images/flats/flat3.jpg"]
-      }
-    }
-  }
-};
-let currentQueueId = null;
-let currentMonthKey = null;
-
-
-// Ініціалізація прогрес-блоку
-// Розкоментувати коли буде бек 
-// async function fetchProgressData() {
-//   const formData = new FormData();
-//   formData.append('action', 'progress_data');
-
-//   try {
-//     const response = await axios.post('/wp-admin/admin-ajax.php', formData);
-//     const data = response.data || {};
-
-//     progressData = data;
-
-//     const firstQueue = Object.keys(progressData)[0];
-//     if (firstQueue) loadQueue(firstQueue);
-//     renderQueues(Object.keys(progressData));
-//   } catch (error) {
-//     console.error('Помилка при завантаженні прогрес-даних:', error);
+//       "2025-april": {
+//         "gallery": ["/wp-content/themes/3d/assets/images/flats/flat1.jpg", "/wp-content/themes/3d/assets/images/flats/flat2.jpg"],
+//         "progress": [
+//           { "title": "Фундамент", "value": 100 },
+//           { "title": "Вікна", "value": 40 },
+//           { "title": "Каркас (підземна частина)", "value": 100 },
+//           { "title": "Радіатори", "value": 10 },
+//           { "title": "Каркас (наземна частина)", "value": 100 },
+//           { "title": "Двері", "value": 40 },
+//           { "title": "Зовнішні стіни та перегородки", "value": 100 },
+//           { "title": "Ліфти", "value": 40 }
+//         ]
+//       },
+//       "2025-march": {
+//         "gallery": ["/wp-content/themes/3d/assets/images/flats/flat1.jpg","/wp-content/themes/3d/assets/images/flats/flat2.jpg","/wp-content/themes/3d/assets/images/flats/flat3.jpg"],
+//         "progress": [
+//           { "title": "Фундамент", "value": 95 },
+//           { "title": "Вікна", "value": 20 }
+//         ]
+//       }
+//     }
+//   },
+//   "2": {
+//     "updateDate": "01.03.2025",
+//     "finishDate": "01.12.2027",
+//     "months": {
+//       "2025-april": {
+//         "gallery": ["/wp-content/themes/3d/assets/images/flats/flat3.jpg"],
+//         "progress": [
+//           { "title": "Фундамент", "value": 80 },
+//           { "title": "Вікна", "value": 10 }
+//         ]
+//       }
+//     }
 //   }
+// };
+// progressData = {
+//   "1": {
+//     updateDate: "10.06.2025",
+//     finishDate: "12.12.2025",
+//     progress: [
+//       { "title": "Фундамент", "value": 100 },
+//           { "title": "Вікна", "value": 40 },
+//           { "title": "Каркас (підземна частина)", "value": 100 },
+//           { "title": "Радіатори", "value": 10 },
+//           { "title": "Каркас (наземна частина)", "value": 100 },
+//           { "title": "Двері", "value": 40 },
+//           { "title": "Зовнішні стіни та перегородки", "value": 100 },
+//           { "title": "Ліфти", "value": 40 }
+//     ],
+//     months: {
+//       "2025-april": {
+//         gallery: ["/assets/images/flats/flat1.jpg", "/assets/images/flats/flat2.jpg"]
+//       },
+//       "2025-march": {
+//         gallery: ["/assets/images/flats/flat2.jpg", "/assets/images/flats/flat3.jpg"]
+//       }
+//     }
+//   },
+//   "2": {
+//     updateDate: "01.05.2025",
+//     finishDate: "30.11.2025",
+//     progress: [
+//       { title: "Фундамент", value: 100 },
+//       { title: "Стіни", value: 90 },
+//       { title: "Оздоблення", value: 30 },
+//     ],
+//     months: {
+//       "2025-may": {
+//         gallery: ["/assets/images/flats/flat3.jpg", "/assets/images/flats/flat2.jpg"]
+//       },
+//       "2025-april": {
+//         gallery: ["/assets/images/flats/flat1.jpg", "/assets/images/flats/flat3.jpg"]
+//       }
+//     }
+//   }
+// };
+// let currentQueueId = null;
+// let currentMonthKey = null;
+
+
+// // Ініціалізація прогрес-блоку
+// // Розкоментувати коли буде бек 
+// // async function fetchProgressData() {
+// //   const formData = new FormData();
+// //   formData.append('action', 'progress_data');
+
+// //   try {
+// //     const response = await axios.post('/wp-admin/admin-ajax.php', formData);
+// //     const data = response.data || {};
+
+// //     progressData = data;
+
+// //     const firstQueue = Object.keys(progressData)[0];
+// //     if (firstQueue) loadQueue(firstQueue);
+// //     renderQueues(Object.keys(progressData));
+// //   } catch (error) {
+// //     console.error('Помилка при завантаженні прогрес-даних:', error);
+// //   }
+// // }
+// const firstQueue = Object.keys(progressData)[0];
+// if (firstQueue) loadQueue(firstQueue);
+// renderQueues(Object.keys(progressData));
+
+// function renderQueues(queueKeys) {
+//   const wrapper = document.querySelector(".swiper-progress-queue-ctrls .swiper-wrapper");
+//   wrapper.innerHTML = "";
+
+//   queueKeys.forEach((queueKey, index) => {
+//     const slide = document.createElement("div");
+//     slide.className = "swiper-slide";
+//     if (index === 0) slide.classList.add("active-slide");
+//     slide.dataset.queue = queueKey;
+//     slide.textContent = `Черга ${queueKey}`;
+
+//     slide.addEventListener("click", () => {
+//       document.querySelectorAll(".swiper-progress-queue-ctrls .swiper-slide").forEach(s => s.classList.remove("active-slide"));
+//       slide.classList.add("active-slide");
+//       loadQueue(queueKey);
+//     });
+
+//     wrapper.appendChild(slide);
+//   });
+
+//   if (window.queueSwiper) window.queueSwiper.destroy();
+//   window.queueSwiper = new Swiper(".swiper-progress-queue-ctrls", {
+//     modules: [Scrollbar],
+//     slidesPerView: 'auto',
+//     spaceBetween: 32,
+//     freeMode: true,
+//     watchSlidesProgress: true,
+//     scrollbar: {
+//       el: '.swiper-progress-queue-ctrls .swiper-scrollbar',
+//       draggable: true,
+//     },
+//   });
 // }
-const firstQueue = Object.keys(progressData)[0];
-if (firstQueue) loadQueue(firstQueue);
-renderQueues(Object.keys(progressData));
 
-function renderQueues(queueKeys) {
-  const wrapper = document.querySelector(".swiper-progress-queue-ctrls .swiper-wrapper");
-  wrapper.innerHTML = "";
+// function loadQueue(queueKey) {
+//   const queue = progressData[queueKey];
+//   if (!queue) return;
 
-  queueKeys.forEach((queueKey, index) => {
-    const slide = document.createElement("div");
-    slide.className = "swiper-slide";
-    if (index === 0) slide.classList.add("active-slide");
-    slide.dataset.queue = queueKey;
-    slide.textContent = `Черга ${queueKey}`;
+//   const dateEls = document.querySelectorAll('.queue-dates .date-value');
+//   dateEls[0].textContent = queue.updateDate;
+//   dateEls[1].textContent = queue.finishDate;
 
-    slide.addEventListener("click", () => {
-      document.querySelectorAll(".swiper-progress-queue-ctrls .swiper-slide").forEach(s => s.classList.remove("active-slide"));
-      slide.classList.add("active-slide");
-      loadQueue(queueKey);
-    });
+//   renderMonthTabs(queue.months, queueKey);
 
-    wrapper.appendChild(slide);
-  });
+//   const monthsSorted = Object.keys(queue.months).sort((a, b) => new Date(b) - new Date(a));
+//   const latestMonthKey = monthsSorted[0];
+//   loadMonth(queueKey, latestMonthKey);
+//   renderPercents(queue.progress);
+// }
 
-  if (window.queueSwiper) window.queueSwiper.destroy();
-  window.queueSwiper = new Swiper(".swiper-progress-queue-ctrls", {
-    modules: [Scrollbar],
-    slidesPerView: 'auto',
-    spaceBetween: 32,
-    freeMode: true,
-    watchSlidesProgress: true,
-    scrollbar: {
-      el: '.swiper-progress-queue-ctrls .swiper-scrollbar',
-      draggable: true,
-    },
-  });
-}
+// function loadMonth(queueKey, monthKey) {
+//   const queue = progressData[queueKey];
+//   const monthData = queue.months[monthKey];
+//   if (!monthData) return;
 
-function loadQueue(queueKey) {
-  const queue = progressData[queueKey];
-  if (!queue) return;
+//   renderGallery(monthData.gallery);
+//    // Прогрес тепер належить черзі
+// }
 
-  const dateEls = document.querySelectorAll('.queue-dates .date-value');
-  dateEls[0].textContent = queue.updateDate;
-  dateEls[1].textContent = queue.finishDate;
+// function renderMonthTabs(months, queueKey) {
+//   const wrapper = document.querySelector(".swiper-progress-month-ctrls .swiper-wrapper");
+//   wrapper.innerHTML = "";
 
-  renderMonthTabs(queue.months, queueKey);
+//   const monthKeys = Object.keys(months).sort((a, b) => new Date(b) - new Date(a));
 
-  const monthsSorted = Object.keys(queue.months).sort((a, b) => new Date(b) - new Date(a));
-  const latestMonthKey = monthsSorted[0];
-  loadMonth(queueKey, latestMonthKey);
-  renderPercents(queue.progress);
-}
+//   monthKeys.forEach((key, index) => {
+//     const [year, month] = key.split('-');
+//     const monthLabel = getUkrainianMonthLabel(month);
 
-function loadMonth(queueKey, monthKey) {
-  const queue = progressData[queueKey];
-  const monthData = queue.months[monthKey];
-  if (!monthData) return;
+//     const slide = document.createElement("div");
+//     slide.className = "swiper-slide";
+//     if (index === 0) slide.classList.add("active-slide");
+//     slide.dataset.month = key;
+//     slide.textContent = `${monthLabel} ${year}`;
 
-  renderGallery(monthData.gallery);
-   // Прогрес тепер належить черзі
-}
+//     slide.addEventListener("click", () => {
+//       document.querySelectorAll(".swiper-progress-month-ctrls .swiper-slide").forEach(s => s.classList.remove("active-slide"));
+//       slide.classList.add("active-slide");
+//       loadMonth(queueKey, key);
+//     });
 
-function renderMonthTabs(months, queueKey) {
-  const wrapper = document.querySelector(".swiper-progress-month-ctrls .swiper-wrapper");
-  wrapper.innerHTML = "";
+//     wrapper.appendChild(slide);
+//   });
 
-  const monthKeys = Object.keys(months).sort((a, b) => new Date(b) - new Date(a));
+//   if (window.monthSwiper) window.monthSwiper.destroy();
+//   window.monthSwiper = new Swiper(".swiper-progress-month-ctrls", {
+//     modules: [Scrollbar],
+//     slidesPerView: 'auto',
+//     spaceBetween: 32,
+//     freeMode: true,
+//     watchSlidesProgress: true,
+//     scrollbar: {
+//       el: '.swiper-progress-month-ctrls .swiper-scrollbar',
+//       draggable: true,
+//     },
+//   });
+// }
 
-  monthKeys.forEach((key, index) => {
-    const [year, month] = key.split('-');
-    const monthLabel = getUkrainianMonthLabel(month);
+// function getUkrainianMonthLabel(month) {
+//   const months = {
+//     january: "Січень", february: "Лютий", march: "Березень", april: "Квітень",
+//     may: "Травень", june: "Червень", july: "Липень", august: "Серпень",
+//     september: "Вересень", october: "Жовтень", november: "Листопад", december: "Грудень"
+//   };
+//   return months[month.toLowerCase()] || month;
+// }
 
-    const slide = document.createElement("div");
-    slide.className = "swiper-slide";
-    if (index === 0) slide.classList.add("active-slide");
-    slide.dataset.month = key;
-    slide.textContent = `${monthLabel} ${year}`;
+// function renderGallery(images) {
+//   const wrapper = document.querySelector(".swiper-progress-gallery .swiper-wrapper");
+//   wrapper.innerHTML = "";
 
-    slide.addEventListener("click", () => {
-      document.querySelectorAll(".swiper-progress-month-ctrls .swiper-slide").forEach(s => s.classList.remove("active-slide"));
-      slide.classList.add("active-slide");
-      loadMonth(queueKey, key);
-    });
+//   images.forEach(imgUrl => {
+//     const slide = document.createElement("div");
+//     slide.className = "swiper-slide";
 
-    wrapper.appendChild(slide);
-  });
+//     const img = document.createElement("img");
+//     img.src = imgUrl;
+//     img.alt = "Фото ходу будівництва";
+//     img.style.opacity = 0;
+//     img.style.transform = "translateY(30px)";
 
-  if (window.monthSwiper) window.monthSwiper.destroy();
-  window.monthSwiper = new Swiper(".swiper-progress-month-ctrls", {
-    modules: [Scrollbar],
-    slidesPerView: 'auto',
-    spaceBetween: 32,
-    freeMode: true,
-    watchSlidesProgress: true,
-    scrollbar: {
-      el: '.swiper-progress-month-ctrls .swiper-scrollbar',
-      draggable: true,
-    },
-  });
-}
+//     slide.appendChild(img);
+//     wrapper.appendChild(slide);
+//   });
 
-function getUkrainianMonthLabel(month) {
-  const months = {
-    january: "Січень", february: "Лютий", march: "Березень", april: "Квітень",
-    may: "Травень", june: "Червень", july: "Липень", august: "Серпень",
-    september: "Вересень", october: "Жовтень", november: "Листопад", december: "Грудень"
-  };
-  return months[month.toLowerCase()] || month;
-}
+//   if (window.gallerySwiper) window.gallerySwiper.destroy();
+//   window.gallerySwiper = new Swiper(".swiper-progress-gallery", {
+//     modules: [Navigation],
+//     speed: 600,
+//     slidesPerView: 1,
+//     spaceBetween: 20,
+//     breakpoints: {
+//       768: {
+//         slidesPerView: 3,
+//       },
+//       1366: {
+//         slidesPerView: 4,
+//       },
+//     },
+//     navigation: {
+//       nextEl: "[data-progress-gallery-btn-next]",
+//       prevEl: "[data-progress-gallery-btn-prev]",
+//     },
+//   });
 
-function renderGallery(images) {
-  const wrapper = document.querySelector(".swiper-progress-gallery .swiper-wrapper");
-  wrapper.innerHTML = "";
+//   animateGalleryImages();
+// }
 
-  images.forEach(imgUrl => {
-    const slide = document.createElement("div");
-    slide.className = "swiper-slide";
+// function animateGalleryImages() {
+//   const images = document.querySelectorAll(".swiper-progress-gallery .swiper-slide img");
 
-    const img = document.createElement("img");
-    img.src = imgUrl;
-    img.alt = "Фото ходу будівництва";
-    img.style.opacity = 0;
-    img.style.transform = "translateY(30px)";
+//   gsap.fromTo(images,
+//     {
+//       opacity: 0,
+//       y: 30
+//     },
+//     {
+//       opacity: 1,
+//       y: 0,
+//       duration: 0.6,
+//       ease: "power2.out",
+//       stagger: 0.1
+//     }
+//   );
+// }
 
-    slide.appendChild(img);
-    wrapper.appendChild(slide);
-  });
+// function renderPercents(progressList) {
+//   const wrapper = document.querySelector(".swiper-progress-percents .swiper-wrapper");
+//   wrapper.innerHTML = "";
 
-  if (window.gallerySwiper) window.gallerySwiper.destroy();
-  window.gallerySwiper = new Swiper(".swiper-progress-gallery", {
-    modules: [Navigation],
-    speed: 600,
-    slidesPerView: 1,
-    spaceBetween: 20,
-    breakpoints: {
-      768: {
-        slidesPerView: 3,
-      },
-      1366: {
-        slidesPerView: 4,
-      },
-    },
-    navigation: {
-      nextEl: "[data-progress-gallery-btn-next]",
-      prevEl: "[data-progress-gallery-btn-prev]",
-    },
-  });
+//   progressList.forEach(item => {
+//     const slide = document.createElement("div");
+//     slide.className = "swiper-slide";
 
-  animateGalleryImages();
-}
+//     const percentId = `progress-${Math.random().toString(36).substr(2, 9)}`;
 
-function animateGalleryImages() {
-  const images = document.querySelectorAll(".swiper-progress-gallery .swiper-slide img");
+//     slide.innerHTML = `
+//       <h3 class="percents-title" data-percent-title="${item.title}">${item.title}</h3>
+//       <p class="percent-value" id="${percentId}">0%</p>
+//       <div class="percent-line" data-percent="${item.value}%">
+//         <div class="percent-fill" style="width: 0%;"></div>
+//       </div>
+//     `;
 
-  gsap.fromTo(images,
-    {
-      opacity: 0,
-      y: 30
-    },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: "power2.out",
-      stagger: 0.1
-    }
-  );
-}
+//     wrapper.appendChild(slide);
 
-function renderPercents(progressList) {
-  const wrapper = document.querySelector(".swiper-progress-percents .swiper-wrapper");
-  wrapper.innerHTML = "";
+//     requestAnimationFrame(() => {
+//       const fill = slide.querySelector(".percent-fill");
+//       const valueEl = document.getElementById(percentId);
 
-  progressList.forEach(item => {
-    const slide = document.createElement("div");
-    slide.className = "swiper-slide";
+//       if (!fill || !valueEl) return;
 
-    const percentId = `progress-${Math.random().toString(36).substr(2, 9)}`;
+//       const targetPercent = parseInt(item.value, 10);
 
-    slide.innerHTML = `
-      <h3 class="percents-title" data-percent-title="${item.title}">${item.title}</h3>
-      <p class="percent-value" id="${percentId}">0%</p>
-      <div class="percent-line" data-percent="${item.value}%">
-        <div class="percent-fill" style="width: 0%;"></div>
-      </div>
-    `;
+//       gsap.to(fill, {
+//         width: `${targetPercent}%`,
+//         duration: 1,
+//         ease: "power2.out"
+//       });
 
-    wrapper.appendChild(slide);
+//       const counter = { val: 0 };
+//       gsap.to(counter, {
+//         val: targetPercent,
+//         duration: 1.2,
+//         ease: "power2.out",
+//         onUpdate: () => {
+//           if (valueEl) {
+//             valueEl.textContent = `${Math.round(counter.val)}%`;
+//           }
+//         }
+//       });
+//     });
+//   });
 
-    requestAnimationFrame(() => {
-      const fill = slide.querySelector(".percent-fill");
-      const valueEl = document.getElementById(percentId);
+//   if (window.percentsSwiper) {
+//     window.percentsSwiper.destroy(true, true);
+//   }
 
-      if (!fill || !valueEl) return;
-
-      const targetPercent = parseInt(item.value, 10);
-
-      gsap.to(fill, {
-        width: `${targetPercent}%`,
-        duration: 1,
-        ease: "power2.out"
-      });
-
-      const counter = { val: 0 };
-      gsap.to(counter, {
-        val: targetPercent,
-        duration: 1.2,
-        ease: "power2.out",
-        onUpdate: () => {
-          if (valueEl) {
-            valueEl.textContent = `${Math.round(counter.val)}%`;
-          }
-        }
-      });
-    });
-  });
-
-  if (window.percentsSwiper) {
-    window.percentsSwiper.destroy(true, true);
-  }
-
-  window.percentsSwiper = new Swiper(".swiper-progress-percents", {
-    modules: [Navigation, Grid],
-    speed: 600,
-    navigation: {
-      nextEl: "[data-percents-btn-next]",
-      prevEl: "[data-percents-btn-prev]",
-    },
-    grid: {
-      rows: 2,
-      fill: "row"
-    },
-    slidesPerView: 2,
-    spaceBetween: 16,
-    breakpoints: {
-      768: {
-        spaceBetween: 20,
-        slidesPerView: 4,
-      },
-      1024: {
-        slidesPerView: 4,
-      }
-    }
-  });
-}
+//   window.percentsSwiper = new Swiper(".swiper-progress-percents", {
+//     modules: [Navigation, Grid],
+//     speed: 600,
+//     navigation: {
+//       nextEl: "[data-percents-btn-next]",
+//       prevEl: "[data-percents-btn-prev]",
+//     },
+//     grid: {
+//       rows: 2,
+//       fill: "row"
+//     },
+//     slidesPerView: 2,
+//     spaceBetween: 16,
+//     breakpoints: {
+//       768: {
+//         spaceBetween: 20,
+//         slidesPerView: 4,
+//       },
+//       1024: {
+//         slidesPerView: 4,
+//       }
+//     }
+//   });
+// }
