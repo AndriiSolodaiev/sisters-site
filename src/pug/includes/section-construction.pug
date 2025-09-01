@@ -1,0 +1,22 @@
+section.section_construction.construction(id="construction")
+  .container
+    .construction__title.chars-anim Хід будівництва
+    .construction__filter
+      select.select(data-construction-filter="month" data-lenis-prevent)
+       
+        option(value="6") Червень
+        
+      select.select(data-construction-filter="year" data-lenis-prevent)
+        option(value="2024") 2024
+       
+    .construction__slider.swiper-container(data-construction-slider)
+        <div class="construction-navigation">
+            <svg data-construction-slider-prev xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
+            <svg data-construction-slider-next xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/></svg>
+        </div>
+        .swiper-wrapper
+            each val in [1,2,3,4,5,6,6,6,6,6,6]
+                .swiper-slide.construction-card(data-construction-card data-year="2024" data-month=val)
+                    .construction-card__image
+                        .construction-card__image-wrap
+                            img(src="./assets/images/construction/image1.jpg", alt="")

@@ -1,9 +1,7 @@
 @import './assets/vars'; // переменные
 @import './assets/smart-grid'; // mixins smartgrid.js
 
-
 @import './libs';
-
 
 // assets
 @import './assets/mixins'; // миксины
@@ -19,11 +17,11 @@
 @import './footer';
 @import './404';
 @import './includes/navigation';
+@import './includes/section-construction';
 
 @import './assets/interface'; // main style
 @import './assets/breadcrubs'; // main style
 @import './assets/templates';
-
 
 @import '../../pug/components/form/form';
 @import '../../pug/components/toster/toster';
