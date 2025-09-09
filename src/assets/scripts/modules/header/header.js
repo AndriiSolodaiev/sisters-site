@@ -202,3 +202,65 @@ function menuAnimation() {
     }
   }
 }
+
+const mainBtn = document.getElementById("mainBtn");
+  const icons = mainBtn.querySelectorAll(".icon:not(.close)");
+  const closeIcon = mainBtn.querySelector(".icon.close");
+  const socialLinks = document.getElementById("socialLinks");
+  const widget = document.getElementById("widget");
+
+  let index = 0;
+  let interval = null;
+  let isOpen = false;
+
+  function showIcon(i) {
+    icons.forEach((icon, idx) => {
+      icon.classList.toggle("active", idx === i);
+    });
+  }
+
+  function startRotation() {
+    interval = setInterval(() => {
+      index = (index + 1) % icons.length;
+      showIcon(index);
+    }, 3000);
+  }
+
+  function stopRotation() {
+    clearInterval(interval);
+  }
+
+  // запуск циклу іконок
+  startRotation();
+
+  // клік по головній кнопці
+  mainBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    isOpen = !isOpen;
+
+    if (isOpen) {
+      // відкрити соц мережі
+      socialLinks.classList.add("open");
+      stopRotation();
+      icons.forEach(icon => icon.classList.remove("active"));
+      closeIcon.classList.add("active");
+      mainBtn.style.setProperty("--ripple-play", "paused");
+    } else {
+      // закрити
+      socialLinks.classList.remove("open");
+      closeIcon.classList.remove("active");
+      showIcon(index);
+      startRotation();
+    }
+  });
+
+  // клік поза віджетом
+  document.addEventListener("click", (e) => {
+    if (isOpen && !widget.contains(e.target)) {
+      isOpen = false;
+      socialLinks.classList.remove("open");
+      closeIcon.classList.remove("active");
+      showIcon(index);
+      startRotation();
+    }
+  });
