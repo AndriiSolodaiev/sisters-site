@@ -191,13 +191,19 @@
 }
 
 .construction-card {
+  height: 17.7vw;
+  @media (max-width: 1300px) {
+    height: 27vw;
+  }
+  @media (max-width: 768px) {
+    height: 50vw;
+  }
   &__top {
     margin-bottom: 24px;
     display: flex;
     align-items: center;
     font-family: $default-font;
     font-size: 14px;
-    // color: rgba(41, 41, 37, 0.2);
 
     @include to(767px) {
       font-size: 12px;
@@ -208,7 +214,6 @@
       content: '';
       display: block;
       height: 1px;
-      //   background-color: var(--blue);
       flex-grow: 1;
       margin-right: 24px;
     }
@@ -216,22 +221,29 @@
 
   &__image {
     cursor: grab;
+    height: 100%;
     &:active {
       cursor: grabbing;
     }
     &-wrap {
       position: relative;
-      padding-bottom: 100%;
+      height: 100%;
 
       img {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 8px;
       }
+    }
+  }
+
+  .video-container {
+    height: 100%;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
     }
   }
 

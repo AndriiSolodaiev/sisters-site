@@ -14,16 +14,21 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-
   }
 }
 
 .modal-form {
   position: absolute;
-  max-height: 90vh;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // max-height: 90vh;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  left: 5vw;
+  top: 10vh;
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  height: 80vh;
   width: 90%;
   background: $wc;
   border: none;
@@ -39,12 +44,15 @@
   }
 
   @include tablet {
+    width: 50vw;
+    height: 80vh;
+    left: 25vw;
+    top: 10vh;
+    // width: 48vw;
+    // top: 50%;
+    // left: 50%;
 
-    width: 48vw;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
+    // transform: translate(-50%, -50%);
   }
 
   // @include desktop {
@@ -52,31 +60,43 @@
   // }
 }
 
+.form-wrapper {
+  height: 80%;
+  .form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    select {
+      display: flex;
+      justify-content: space-between;
+      width: 250px;
+    }
+  }
+}
+
 .form-title {
   @include subtitle-text;
   color: $bc;
+  height: 20%;
   padding: 16px;
   border-bottom: 1px solid $border-color;
   width: 100%;
   padding-right: 50px;
 
   @include tablet {
-    
     padding: 20px;
     padding-right: 60px;
     font-size: 3.17vw;
-
   }
 }
 
 .form-area-wrap {
-  [data-field-area-from] .form-field__input{
-    border-radius: 4px  0 0 4px;
+  [data-field-area-from] .form-field__input {
+    border-radius: 4px 0 0 4px;
     border-right: none;
   }
-  [data-field-area-to] .form-field__input{
-    border-radius:0 4px 4px 0;
-    
+  [data-field-area-to] .form-field__input {
+    border-radius: 0 4px 4px 0;
   }
 }
 
@@ -93,14 +113,14 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   width: 24px;
-    height: 24px;
+  height: 24px;
   svg {
     width: 24px;
     height: 24px;
   }
 
   @include tablet {
-    &:hover  {
+    &:hover {
       opacity: 0.7;
     }
   }
@@ -123,11 +143,11 @@
   width: 100%;
   margin-bottom: 48px;
 
-  h2 {}
+  h2 {
+  }
 
   p {
     @include general-text;
-
 
     @include tablet {
       width: 324px;
@@ -151,7 +171,6 @@
 }
 
 .form {
-
   .general-btn {
     margin-bottom: 0;
     text-transform: none;
@@ -166,16 +185,19 @@
     }
   }
 
-  @include laptop {}
+  @include laptop {
+  }
 
-  @include desktop {}
+  @include desktop {
+  }
 }
 .mobile.landscape [data-call-us-modal] {
-  width:90%;
+  width: 90%;
   .inputs-wrapper {
- flex-direction: row;
- justify-content: space-between;
-}}
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
 .inputs-wrapper {
   display: flex;
   flex-direction: column;
@@ -183,21 +205,18 @@
   width: 100%;
   padding: 16px;
   padding-bottom: 20px;
- 
+
   @include tablet {
     padding: 20px;
     padding-bottom: 20px;
   }
 
-
-  @include laptop {}
-
- 
+  @include laptop {
+  }
 }
 
 .input-title {
   @include tiny-text;
-
 
   margin-bottom: 12px;
 
@@ -205,8 +224,8 @@
     font-size: 1.19vw;
   }
 
-  @include laptop {}
-
+  @include laptop {
+  }
 }
 
 .form-field {
@@ -229,47 +248,42 @@
   width: 100%;
   padding: 16px;
 
-
   border-radius: 4px;
   background-color: transparent;
   border: 1px solid $border-color;
   transition: border-color 0.3s ease-in-out;
 
-
   &::placeholder {
     transition: color 0.3s ease-in-out;
     color: $bc;
     opacity: 0.7;
-
   }
 
-  &:focus {}
+  &:focus {
+  }
 
-  @include tablet {}
+  @include tablet {
+  }
 
-  @include laptop {}
-
-
+  @include laptop {
+  }
 }
-[data-status="field--error"] .form-field__input{
-  border-color: #D03D35;
+[data-status='field--error'] .form-field__input {
+  border-color: #d03d35;
   &::placeholder {
-    color: #D03D35;
+    color: #d03d35;
   }
 }
 .text-input {
   resize: none;
-
 }
 
 .form__button {
   justify-self: flex-end;
 
-
   width: fit-content;
 
   &:hover .submit-btn__text {
-
     position: relative;
     z-index: 1;
   }
@@ -284,27 +298,26 @@
 }
 
 .form__button-wrapper {
- 
+  @include tablet {
+  }
 
-  @include tablet {}
+  @include laptop {
+  }
 
-  @include laptop {}
-
-  @include desktop {}
-
-
+  @include desktop {
+  }
 }
 
 .submit-btn__text {
-  @include laptop {}
+  @include laptop {
+  }
 }
 
 .iti__flag {
   background-image: url('../images/libs/flags.png');
 }
 
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .iti__flag {
     background-image: url('../images/libs/flags@2x.png');
   }
@@ -312,7 +325,6 @@
 
 .input-message {
   @include tiny-text;
-
 }
 
 .footer .iti--allow-dropdown input {
@@ -331,8 +343,6 @@
   width: auto;
   height: auto;
 }
-
-
 
 .iti__mobile {
   .iti__country-list {
@@ -423,7 +433,6 @@
       @include tablet {
         max-height: 200px;
       }
-
     }
 
     .option {
@@ -470,10 +479,11 @@
   .irs-min,
   .irs-max {
     background-color: transparent;
-    @include tiny-text
+    @include tiny-text;
   }
 
-  .irs-to, .irs-from,
+  .irs-to,
+  .irs-from,
   .irs-single {
     background-color: transparent;
     @include tiny-text;
@@ -481,7 +491,7 @@
     top: 40px;
 
     &::before {
-      border-top-color: transparent
+      border-top-color: transparent;
     }
   }
 
@@ -505,8 +515,7 @@
   cursor: pointer;
   @include tiny-text;
 
-
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     display: none;
   }
 
@@ -535,7 +544,7 @@
     }
   }
 
-  input[type="checkbox"]:checked+.checkbox-circle {
+  input[type='checkbox']:checked + .checkbox-circle {
     background-color: $bc;
 
     &::after {
@@ -557,11 +566,10 @@
   }
 
   .form-field-input {
-
     position: relative;
 
     &::after {
-      content: "м²";
+      content: 'м²';
       // pointer-events: none;
       position: absolute;
       z-index: 2;
@@ -585,12 +593,12 @@
   gap: 8px;
   cursor: pointer;
 
-  input:checked+.custom-radio {
+  input:checked + .custom-radio {
     background-color: $wc;
     border-color: $bc;
   }
 
-  input:checked+.custom-radio::after {
+  input:checked + .custom-radio::after {
     opacity: 1;
   }
 }

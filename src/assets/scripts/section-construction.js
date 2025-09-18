@@ -8,8 +8,12 @@ function constructionSliderHandler() {
     slidesPerView: 1,
     spaceBetween: 0,
     breakpoints: {
-      768: {
+      1300: {
         slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      768: {
+        slidesPerView: 2,
         spaceBetween: 30,
       },
     },

@@ -141,6 +141,18 @@ header(class="header "+headerCustomClass)
               .input-title  Номер телефону*
               input(type='text' name="phone" placeholder="Телефон:").form-field__input
               .input-message(data-input-message)
+            .form-field.form-field-input.first-offset(data-field-input data-field-forwho data-status="field--inactive")
+                .input-title Зручний варіант звʼязку: 
+                input(name="contact_way" type='text' id="contact_way_input" style="visibility: hidden; opacity: 0; width: 0px; height: 0px;padding:0;").form-field__input
+                .wrapper_for_select.popup_selection_item__wrapper_for_select
+                  select(id="contact_way" class="select" )
+                    option(value="call") Зателефонувати
+                    option(value="viber_text") написати у Viber
+                    option(value="telegram_text") написати у Telegram
+                    option(value="whatsapp_text") написати у WhatsApp
+                    option(value="viber_call") зателефонувати у Viber
+                    option(value="telegram_call") зателефонувати у Telegram
+                    option(value="whatsapp_call") зателефонувати у WhatsApp
           .form__button-wrapper
             button( type="submit" data-btn-submit).general-btn
               span.submit-btn__text(data-btn-submit-text) Замовити дзвінок
