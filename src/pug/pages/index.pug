@@ -449,6 +449,23 @@ block content
           img(src="./assets/images/energy.jpg", alt="energy").panel-item
     button.general-btn(type="button" data-call-us-btn) 
       span Записатися на консультацію
+    <section class="section_view content"> 
+      <img class="section_view__background section_background" src="<?=get_template_directory_uri()?>/assets/images/bigben_pattern_1.png" alt="background" loading="lazy">
+      <div class="section_view__wrapper">
+        <div class="section_view__title section_title">
+            <div>Яким може бути ваше життя в BigBen</div>
+        </div>
+        <div class="section_view__subtitle section_subtitle">BIGBEN / Львів</div>
+        <div class="section_view__inside_wrapper">
+          <button id="loadIframeButton">Завантажити тур</button>
+          <div class="iframe-container" id="iframeWrapper">
+            <img src="<?=get_template_directory_uri()?>/assets/images/view/2.png">
+            <iframe id="lazyIframe" loading="lazy" allowfullscreen data-src="https://v3.vrnet.io/?lscene=ua/riel/sister/ext">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>  
     .params(id="params") 
       h2.view__title.chars-anim Характеристики
       .params-list-wrap
