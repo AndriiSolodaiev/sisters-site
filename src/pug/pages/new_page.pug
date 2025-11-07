@@ -1,0 +1,32 @@
+
+extends ../layout/main
+block variable
+  -
+    var title_page = 'new_page'
+    var id_page = 'id-page-new_page'
+    var class_page = 'class-page-new_page'
+    var headerCustomClass = 'type1' 
+    var breadcrumbsSubitem = [
+      {
+        label: 'About',
+        link: pagesLink[0].about
+      }
+    ]
+  
+block meta
+  title= title_page
+  meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+  script(defer src='./assets/scripts/vendors.bundle.js')
+  script(defer src='./assets/scripts/header.bundle.js')
+  script(defer src='./assets/scripts/footer.bundle.js')
+  script(defer src='./assets/scripts/new_page.bundle.js')
+block content
+  h1 new_page
+block footer
+  include ../includes/footer.pug
+
+block header
+  include ../includes/header.pug
