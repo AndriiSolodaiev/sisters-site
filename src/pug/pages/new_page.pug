@@ -16,15 +16,27 @@ block variable
 block meta
   title= title_page
   meta(name='description', content='')
+
 block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
+
 block scripts
   script(defer src='./assets/scripts/vendors.bundle.js')
   script(defer src='./assets/scripts/header.bundle.js')
   script(defer src='./assets/scripts/footer.bundle.js')
   script(defer src='./assets/scripts/new_page.bundle.js')
+
 block content
-  h1 new_page
+  section.top_section 
+    .container
+        .top_section__left
+            img.img_big(src="../../assets/images/new_page/hero_section/hero-img.png")
+        .top_section__right
+            .top_section__title.title_96_48 Riel Family<br>Style —
+            .top_section__subtitle.text_48_32 Архітектура<br>з родинними<br>цінностями
+    img.figure(src="../../assets/images/new_page/hero_section/hero-decor.png")
+    .bg
+
 block footer
   include ../includes/footer.pug
 
