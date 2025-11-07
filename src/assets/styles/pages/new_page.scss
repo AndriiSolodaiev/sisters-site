@@ -470,5 +470,143 @@
 }
 
 // ======== Summary section ========
+
+.summary-section {
+  padding-top: 210px;
+  background-color: #f9f2eb;
+  position: relative;
+
+  @media screen and (max-width: 1511px) {
+    padding-top: 200px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding-top: 120px;
+  }
+}
+
+.summary-content-block {
+  position: relative;
+  border-radius: 60px;
+  overflow: hidden;
+  width: 100%;
+  max-height: 1340px;
+
+  aspect-ratio: 1480/1340;
+
+  @media screen and (max-width: 1511px) {
+    aspect-ratio: 736 /1340;
+  }
+
+  @media screen and (max-width: 767px) {
+    aspect-ratio: 343 /820;
+    border-radius: 20px;
+    max-height: 820px;
+  }
+}
+
+.summary-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.summary-text-block {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 2;
+
+  @media screen and (max-width: 767px) {
+    top: 60px;
+  }
+}
+
+.summary-title {
+  @include title-text;
+
+  font-size: 96px;
+  margin-bottom: 40px;
+  color: #f9f2eb;
+  text-align: center;
+
+  @media screen and (max-width: 767px) {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+}
+
+.summary-text {
+  @include subtitle-text;
+
+  font-size: 36px;
+  max-width: 732px;
+  color: #292925;
+  text-align: center;
+  margin-bottom: 60px;
+
+  @media screen and (max-width: 1511px) {
+    min-width: 548px;
+  }
+
+  @media screen and (max-width: 767px) {
+    font-size: 24px;
+    margin-bottom: 40px;
+    min-width: 303px;
+  }
+}
+
+.summary-link {
+  @include general-text;
+
+  font-size: 16px;
+  line-height: 140%;
+  text-align: center;
+  color: #f9f2eb;
+  display: block;
+  margin: auto;
+
+  background-color: #824d37;
+  padding: 15px;
+  border-radius: 100px;
+  max-width: 358px;
+
+  transition: all 0.3s ease-out;
+
+  &:hover,
+  &:focus {
+    color: #292925;
+    background-color: #d89e79;
+  }
+}
+
+.summary-decor-1,
+.summary-decor-2 {
+  position: absolute;
+  top: 333px;
+  object-fit: contain;
+
+  @media screen and (max-width: 1511px) {
+    display: none;
+  }
+}
+
+.summary-decor-1 {
+  left: -300px;
+  width: 792px;
+  height: 680px;
+}
+
+.summary-decor-2 {
+  right: -300px;
+  width: 792px;
+  height: 680px;
+}
+
 // ======== Gallery section ========
 // ======== About section ========
