@@ -609,4 +609,136 @@
 }
 
 // ======== Gallery section ========
+
+.gallery-section {
+  padding-top: 210px;
+  padding-bottom: 210px;
+  background-color: #f9f2eb;
+
+  @media screen and (max-width: 1511px) {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+.gallery-title {
+  @include title-text;
+
+  font-size: 96px;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #292925;
+
+  @media screen and (max-width: 767px) {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+}
+
+.gallery-images-block {
+  position: relative;
+  border-radius: 60px;
+  overflow: hidden;
+
+  @media screen and (max-width: 767px) {
+    border-radius: 20px;
+  }
+}
+
+.gallery-image {
+  width: 100%;
+  max-height: 800px;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1480 / 800;
+
+  @media screen and (max-width: 1511px) {
+    aspect-ratio: 736 / 570;
+    max-height: 570px;
+  }
+
+  @media screen and (max-width: 767px) {
+    aspect-ratio: 343 / 470;
+    max-height: 470px;
+  }
+}
+
+.gallery-next-btn,
+.gallery-prev-btn {
+  width: 72px;
+  height: 72px;
+  background-color: #6975ff;
+  padding: 20px;
+  border-radius: 100px;
+  z-index: 1;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    background-color: #838fea;
+  }
+
+  @media screen and (max-width: 767px) {
+    width: 40px;
+    height: 40px;
+    padding: 13px;
+  }
+
+  svg {
+    fill: #f9f2eb;
+  }
+}
+
+.gallery-next-btn {
+  right: 20px;
+}
+
+.gallery-prev-btn {
+  left: 20px;
+}
+
+.gallery-next-icon,
+.gallery-prev-icon {
+  width: 32px;
+  height: 32px;
+
+  @media screen and (max-width: 767px) {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.gallery-prev-icon {
+  transform: rotate(180deg);
+}
+
+.gallery-images-block .swiper-button-next,
+.gallery-images-block .swiper-button-prev {
+  background-color: transparent;
+}
+
+.gallery-images-block .swiper-button-next:after,
+.gallery-images-block .swiper-button-prev:after {
+  display: none;
+}
+
+.swiper-button-disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  width: unset;
+  height: unset;
+}
+
 // ======== About section ========
