@@ -348,7 +348,7 @@ async function fetchGalleryImages() {
 
   try {
     const response = await axios.post('/wp-admin/admin-ajax.php', formData);
-    const galleries = response.data.galleies || [];
+    const galleries = response.data.galleries || [];
 
     // Перетворити у формат { territory: [img1, img2], ... }
     galleries.forEach(group => {
@@ -357,7 +357,11 @@ async function fetchGalleryImages() {
       galleryImages[categoryName] = imageUrls;
     });
 
-    loadGallery('territory'); // Початкове завантаження
+    const wrapper = document.querySelector('.swiper-gallery .swiper-wrapper');
+
+    if (wrapper) {
+      loadGallery('territory'); // Початкове завантаження
+    }
   } catch (error) {
     console.error('Помилка при завантаженні галереї:', error);
   }
