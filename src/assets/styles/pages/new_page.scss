@@ -50,8 +50,6 @@
 
 .top_section {
   position: relative;
-  height: 100vh;
-  min-height: 670px;
   padding-top: 148px;
   background-color: #b0d3c5;
   overflow: hidden;
@@ -271,7 +269,7 @@
 
 .concept-logo {
   position: relative;
-  margin-top: -88px;
+  margin-top: -108px;
 
   aspect-ratio: 1512/317;
 
@@ -282,7 +280,7 @@
 
   @media screen and (max-width: 767px) {
     aspect-ratio: 375/79;
-    margin-top: -16px;
+    margin-top: -20px;
   }
 }
 
