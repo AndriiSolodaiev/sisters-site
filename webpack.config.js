@@ -9,7 +9,7 @@ const config = {
     index: './src/assets/scripts/gulp-modules/index.js',
     header: './src/assets/scripts/modules/header/header.js',
     footer: './src/assets/scripts/modules/footer/footer.js',
-    
+    new_page: './src/assets/scripts/gulp-modules/new_page.js',
   },
   output: {
     filename: '[name].bundle.js',
