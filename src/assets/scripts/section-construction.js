@@ -81,8 +81,11 @@ function constructionFilterHandler(slider) {
     });
 
     // Прокрутка до початку та оновлення слайдера
-    slider.slideTo(0);
-    slider.update();
+    const constructionSliderRef = document.querySelector('[data-construction-slider]');
+    if (constructionSliderRef) {
+      slider.slideTo(0);
+      slider.update();
+    }
   }
 }
 

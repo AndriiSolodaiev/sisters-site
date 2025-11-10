@@ -72,7 +72,9 @@ const swiperSlidePhotos = new Swiper('.swiper-slide-photos', {
     },
   },
 });
-if (window.innerWidth >= 768) {
+
+const sliderBgRef = document.querySelector('.slide-photos__bg');
+if (window.innerWidth >= 768 && sliderBgRef) {
   const startPos = 'top +=68px';
   gsap.timeline({
     scrollTrigger: {
