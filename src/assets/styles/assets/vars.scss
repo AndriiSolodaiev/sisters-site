@@ -6,98 +6,108 @@ $mc3: #e5df06;
 $mc4: #4f90b6;
 $gray: #878797;
 $text: #22223e;
-$wc: #F9F2EB;
+$wc: #f9f2eb;
 $bc: #292925;
 
-
-$bg-color: #F9F2EB;
-$accent-color: #6975FF;
+$bg-color: #f9f2eb;
+$accent-color: #6975ff;
 $text-color: #292925;
-$second-accent-color: #C7A8D9;
-$border-color: #E4DED7;
+$second-accent-color: #c7a8d9;
+$border-color: #e4ded7;
 $second-accent-color--hover: #dbc6e0;
-$accent-color--hover: #838FEA;
+$accent-color--hover: #838fea;
 
+@mixin title-text() {
+  font-size: 40px;
+  font-family: $default-font;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 100%;
+  text-decoration: none;
 
-@mixin title-text () {
-	font-size: 40px;
-	font-family: $default-font;
-	font-weight: 700;
-	font-style: normal;
-	line-height: 100%;
-	text-decoration: none;
-
-	@include tablet {
-		font-size: 6.3vw;
-	}
+  @include tablet {
+    font-size: 6.3vw;
+  }
 }
 
 @mixin subtitle-text() {
-	font-size: 30px;
-	font-family: $default-font;
-	font-weight: 700;
-	font-style: normal;
-	line-height: 120%;
-	text-decoration: none;
+  font-size: 30px;
+  font-family: $default-font;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
 
-	@include tablet {
-		font-size: 4.23vw;
-	}
+  @include tablet {
+    font-size: 4.23vw;
+  }
 }
 
-@mixin block-subtitle () {
-	font-size: 24px;
-	font-family: $default-font;
-	font-weight: 400;
-	font-style: normal;
-	line-height: 125%;
-	text-decoration: none;
-	text-transform: none;
+@mixin block-subtitle() {
+  font-size: 24px;
+  font-family: $default-font;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 125%;
+  text-decoration: none;
+  text-transform: none;
 
-	@include tablet {
-		font-size: 3.17vw;
-		line-height: 116%;
-	}
+  @include tablet {
+    font-size: 3.17vw;
+    line-height: 116%;
+  }
 }
 
 @mixin general-text() {
-	font-size: 18px;
-	font-family: $default-font;
-	font-weight: 400;
-	font-style: normal;
-	line-height: 133%;
-	text-decoration: none;
-	text-transform: none;
+  font-size: 18px;
+  font-family: $default-font;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 133%;
+  text-decoration: none;
+  text-transform: none;
 
-	@include tablet {
-		font-size: 1.38vw;
-	}
+  @include tablet {
+    font-size: 1.38vw;
+  }
 }
 
 @mixin general-text-bold() {
-	font-size: 18px;
-	font-family: $default-font;
-	font-weight: 700;
-	font-style: normal;
-	line-height: 133%;
-	text-decoration: none;
-	text-transform: none;
+  font-size: 18px;
+  font-family: $default-font;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 133%;
+  text-decoration: none;
+  text-transform: none;
 
-	@include tablet {
-		font-size: 1.38vw;
-	}
+  @include tablet {
+    font-size: 1.38vw;
+  }
 }
 
 @mixin tiny-text() {
-	font-size: 16px;
-	font-family: $default-font;
-	font-weight: 500;
-	font-style: normal;
-	line-height: normal;
+  font-size: 16px;
+  font-family: $default-font;
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
 
-	text-decoration: none;
+  text-decoration: none;
 
-	// @include tablet {
-	// 	font-size: 1.05vw;
-	// }
+  // @include tablet {
+  // 	font-size: 1.05vw;
+  // }
+}
+
+@function vw($px) {
+  @return ($px / 1512) * 100vw;
+}
+
+@function vw_tab($px) {
+  @return ($px / 768) * 100vw;
+}
+
+@function vw_mob($px) {
+  @return ($px / 375) * 100vw;
 }
