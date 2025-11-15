@@ -22,8 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  const isMobile = window.innerWidth < 768;
-
   document.querySelectorAll('.advantages-item').forEach(block => {
     gsap.fromTo(
       block,
@@ -31,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
       {
         y: 0,
         opacity: 1,
-        duration: isMobile ? 0.4 : 0.6,
+        duration: 0.6,
         scrollTrigger: {
           trigger: block,
           start: 'top 80%',
