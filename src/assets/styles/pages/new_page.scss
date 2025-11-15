@@ -312,6 +312,7 @@
 .advantages-section {
   padding-top: 210px;
   background: #f9f2eb;
+  overflow-y: hidden;
 
   @media screen and (max-width: 1023px) {
     padding-top: 200px;
