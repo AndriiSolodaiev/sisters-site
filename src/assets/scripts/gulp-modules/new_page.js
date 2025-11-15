@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
           start: 'top 80%',
           toggleActions: 'play none none none',
           fastScrollEnd: true,
+          once: true,
         },
       },
     );
