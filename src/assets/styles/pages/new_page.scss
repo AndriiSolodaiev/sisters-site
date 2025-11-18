@@ -618,7 +618,7 @@
   }
 }
 
-.summary-link {
+.summary-button {
   @include general-text;
 
   font-size: 16px;
@@ -631,6 +631,7 @@
   background-color: #824d37;
   padding: 15px;
   border-radius: 100px;
+  width: 100%;
   max-width: 358px;
 
   transition: all 0.3s ease-out;
@@ -644,6 +645,10 @@
   @media screen and (min-width: 1512px) {
     font-size: vw(16);
     padding: vw(15);
+  }
+
+  @media screen and (max-width: 375px) {
+    max-width: 268px;
   }
 }
 
