@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 let lenis;
 
 let isInited = false;
+
 export const initSmoothScrolling = () => {
   // Instantiate the Lenis object with specified properties
   if (isInited) return lenis;
