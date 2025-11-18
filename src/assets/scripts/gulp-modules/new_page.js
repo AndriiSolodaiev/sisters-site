@@ -28,7 +28,7 @@ function initGallerySwiper() {
 
 function initAnimations() {
   //hero
-  const heroTl = gsap.timeline({ delay: 0.5 });
+  const heroTl = gsap.timeline({ delay: 1 });
 
   heroTl
     .fromTo(
@@ -40,7 +40,7 @@ function initAnimations() {
       '.figure',
       { xPercent: 100, opacity: 0 },
       { xPercent: 0, opacity: 1, duration: 1, ease: 'power2.out' },
-      '-=0.1',
+      '<',
     );
 
   //concept
@@ -139,6 +139,7 @@ function initAnimations() {
       duration: 1,
       yPercent: 0,
       opacity: 1,
+      ease: 'power2.out',
       scrollTrigger: {
         trigger: '.about-section',
         start: 'top 50%',
