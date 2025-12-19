@@ -1,0 +1,434 @@
+// Finance Page Styles
+
+$svg-bg: #6975FF;
+$fin-bg-color: #F9F2EB;
+$menu-bg: #B0D3C5;
+$menu-border: #E4DED7;
+$title-color: #1a1a1a;
+$description-color: #5D5B5B;
+
+@function fvw($px) {
+  @return calc($px / 1512) * 100vw;
+}
+
+.finance-hero {
+  width: 100%;
+  aspect-ratio: 375 / 310;
+  position: relative;
+
+  @media screen and (min-width: 1024px){
+    aspect-ratio: 1512 / 540;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+
+  h1 {
+    @include title-text;
+    color: $wc;
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 40px;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    @media screen and (min-width: 1024px){
+      font-size: 6.6vw;
+    }
+    span {
+      color: $accent-color;
+    }
+  }
+}
+
+.finance-container {
+  display: flex;
+  gap: 40px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 250px;
+  background-color: $fin-bg-color;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    
+    
+    padding-bottom: 100px;
+  }
+}
+
+// Sidebar Menu
+.finance-sidebar {
+  flex: 0 0 280px;
+
+  @media (max-width: 1024px) {
+    flex: 1 0 auto;
+  }
+}
+
+.finance-menu {
+  background: $menu-bg;
+  border: 1px solid $menu-border;
+  border-radius:8px;
+  overflow: hidden;
+  position: sticky;
+  top: 100px;
+  width: 29vw;
+  padding: fvw(40);
+  @media (max-width: 1024px) {
+    display: none;
+    
+ 
+  }
+
+  &--desktop {
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &--mobile {
+    display: none;
+    
+    @media (max-width: 1024px) {
+      display: block;
+    }
+  }
+  &__arrow {
+    width: fvw(12);
+    transition: all 0.3s ease-in-out;
+    height: fvw(12);
+    background-color: $title-color;
+    clip-path: polygon(0 0, 50% 51%, 100% 100%, 0% 100%);
+  }
+}
+
+// Custom Mobile Dropdown
+.finance-dropdown {
+  display: none;
+ 
+  position: relative;
+
+  @media (max-width: 1024px) {
+    display: block;
+  }
+
+  &.is-open {
+    
+
+    .finance-dropdown__arrow {
+      transform: rotate(180deg);
+    }
+
+    .finance-dropdown__list {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
+}
+
+.finance-dropdown__trigger {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: $menu-bg;
+  border: 1px solid $menu-border;
+  border-radius: 8px;
+  font-size: 21px;
+  color: $title-color;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.finance-dropdown__label {
+  flex: 1;
+  text-align: left;
+}
+
+.finance-dropdown__arrow {
+  flex: 0 0 auto;
+  margin-left: 10px;
+  color: $title-color;
+  transition: transform 0.2s ease;
+  stroke-width: 1.5;
+}
+
+.finance-dropdown__list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background-color: $menu-bg;
+  border: 1px solid $menu-border;
+  border-radius: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.finance-dropdown__item {
+  &:first-child {
+    button {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+  }
+
+  &:last-child {
+    button {
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  }
+
+  &.is-active {
+    button {
+      
+      color: #D03D35;
+      
+    }
+  }
+}
+
+.finance-dropdown__option {
+  width: 100%;
+  padding: 12px 15px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 14px;
+  color: $title-color;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: inherit;
+  font-weight: 500;
+
+  &:hover {
+    background-color: rgba(45, 90, 82, 0.05);
+  }
+}
+
+.finance-menu__title {
+  font-family: $default-font;
+ 
+  margin-bottom: 20px;
+  font-size: fvw(32);
+  font-weight: 700;
+  color: $title-color;
+  white-space: nowrap;
+  letter-spacing: -0.04em;
+  
+}
+
+.finance-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.finance-menu__item {
+  
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+cursor: pointer;
+
+  &--active {
+    .finance-menu__link {
+      // background-color: rgba(211, 47, 47, 0.1);
+      color: #D03D35;
+      
+    }
+    .finance-menu__arrow {
+      background-color: #D03D35;
+      transform: rotate(-135deg);
+  }
+}}
+
+.finance-menu__link {
+  display: block;
+  font-family: $default-font;
+  font-weight: 500;
+  color: $title-color;
+  text-decoration: none;
+  
+  font-size: fvw(21);
+  transition: background-color 0.2s ease;
+letter-spacing: -0.04em;
+  @media (max-width: 768px) {
+    padding: 12px 15px;
+    font-size: 13px;
+  }
+
+  
+}
+
+// Main Content
+.finance-content {
+  flex: 1;
+  padding-top: 40px;
+
+  @media (max-width: 1024px) {
+    flex: 1 0 auto;
+      padding-top: 0px;
+  }
+}
+
+.finance-header {
+  margin-bottom: 50px;
+
+  @media (max-width: 1024px) {
+    margin-bottom: 40px;
+  }
+}
+
+.finance-title {
+  font-size: 60px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 40px 0;
+  line-height: 1.2;
+
+  @media (max-width: 1024px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+ 
+}
+
+.finance-description {
+  font-size: 17px;
+  color: $description-color;
+  line-height: 1.3;
+  margin: 0 0 12px 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  
+}
+
+// Cards Grid
+.finance-cards {
+ 
+  
+
+  
+}
+
+.finance-card {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+
+  @media (max-width: 1024px) {
+    padding: 20px;
+    gap: 20px;
+
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  
+}
+
+.finance-card__icon {
+  
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $svg-bg;
+  border-radius: 50%;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid #F9F2EB;
+
+  }
+  
+
+  @media (max-width: 768px) {
+    // flex: 0 0 50px;
+    // width: 50px;
+    // height: 50px;
+    // font-size: 24px;
+  }
+
+  // svg {
+  //   width: 100%;
+  //   height: 100%;
+  //   color: white;
+  // }
+}
+
+.finance-card__content {
+  flex: 1;
+}
+
+.finance-card__title {
+  font-size: 28px;
+  font-weight: 400;
+  color: $title-color;
+  margin: 0 0 20px 0;
+  line-height: 1.3;
+
+  @media (max-width: 1024px) {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 768px) {
+   
+  }
+}
+
+.finance-card__text {
+  font-size: 17px;
+  color: $description-color;
+  line-height: 1.3;
+  margin: 0 0 12px 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
