@@ -25,7 +25,10 @@ block scripts
   script(defer src='./assets/scripts/finance.bundle.js')
 block content
   section.finance-hero
-    img(src="./assets/images/hero.jpg", alt="building sister")
+    video.finance-hero__video(muted, playsinline, loop, autoplay, poster="./assets/images/hero.jpg")
+      source(src="./assets/videos/sister-video-com.mp4", type="video/mp4")
+      
+      
     h1 
       span Sister
       br
@@ -65,7 +68,7 @@ block content
           li.finance-dropdown__item(data-value="2")
             button.finance-dropdown__option Компенсація у випадку затримки
           li.finance-dropdown__item(data-value="3")
-            button.finance-dropdown__option Можливість заняти на більшу площ
+            button.finance-dropdown__option Можливість заміни на більшу площу
     
     .finance-content
       .finance-header
