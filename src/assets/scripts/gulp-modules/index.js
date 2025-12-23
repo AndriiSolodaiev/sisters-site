@@ -6,6 +6,7 @@ import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin';
 import axios from 'axios';
 import '../animations';
 import '../section-construction';
+import './finance.js'
 initSmoothScrolling();
 gsap.registerPlugin(ScrollTrigger, CustomEase, MorphSVGPlugin);
 // googleMap();

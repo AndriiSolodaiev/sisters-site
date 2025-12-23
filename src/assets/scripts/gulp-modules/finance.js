@@ -421,9 +421,14 @@ class FinanceModule {
       });
 
       // Анімація header - slide up
-      gsap.from(header, {
+      gsap.fromTo(header, {
         opacity: 0,
         y: 30,
+        duration: 0.6,
+        ease: 'power2.out'
+      }, {
+        opacity: 1,
+        y: 0,
         duration: 0.6,
         ease: 'power2.out'
       });
