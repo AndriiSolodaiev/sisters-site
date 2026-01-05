@@ -164,7 +164,38 @@ class FinanceModule {
             ]
           }
         ]
-      }
+      },
+      {
+  title: 'Допомога з продажем попередньої нерухомості та індивідуальний графік розтермінування (трейд-ін)',
+  description: 'Сервіс трейд-ін від РІЕЛ створений для інвесторів, які планують придбати нерухомість у наших проєктах і водночас продати свій попередній об’єкт. Він дозволяє зафіксувати вибране приміщення вже зараз і не втратити вигідні умови придбання через очікування продажу.',
+  cards: [
+    {
+      title: 'Для кого',
+      svg: this.svgs[0],
+      texts: [
+        'Сервіс трейд-ін від РІЕЛ буде корисним для тих, хто прагне покращити житлові або бізнес-умови, змінити формат чи локацію та хоче зробити це швидко – без пауз, зайвих рухів, затягнутих рішень та складних процедур.',
+      ]
+    },
+    {
+      title: 'На що поширюється',
+      svg: this.svgs[2],
+      texts: [
+        'У межах програми інвестор може продавати будь-яку свою нерухомість, зокрема квартири, апартаменти, комерційні приміщення або паркінги. Програма поширюється лише на нерухомість, тобто не поширюється на земельні ділянки та транспортні засоби та інше. Об’єкт може бути оформлений як на самого інвестора, так і на родича першої лінії спорідненості.',
+        'Для оформлення трейд-іну клієнт подає заяву із зазначенням об’єкта, його адреси, площі та орієнтовної вартості продажу, а також правовстановчі документи.'
+      ]
+    },
+    {
+      title: 'Принцип дії, переваги',
+      svg: this.svgs[1],
+      texts: [
+        'Ключова перевага сервісу полягає в тому, що клієнту не потрібно чекати завершення продажу свого об’єкта, щоб вибрати нову нерухомість. За час очікування можуть змінитися ціни, зникнути потрібні планування або вільні площі. Саме тому ми пропонуємо зафіксувати обраний об’єкт за поточною ціною та паралельно організувати продаж попереднього.',
+        'У межах сервісу клієнт може вибрати зручний для себе формат продажу попереднього об’єкта. Він може займатися продажем самостійно або скористатися нашою допомогою. Якщо людина продає нерухомість, раніше придбану у РІЕЛ, її перепродаж може супроводжуватися нашим відділом продажу. Якщо ж об’єкт не був придбаний у РІЕЛ, ми передаємо його в роботу перевіреним партнерським рієлторським агенціям. У будь-якому випадку покупець сам визначає формат продажу, а ми забезпечуємо супровід і координацію процесу за потреби.',
+        'Фінансова модель трейд-іну передбачає укладення типового договору, у якому фіксується такий графік платежів: протягом шести місяців платіж становить фіксовану суму – одну тисячу доларів США щомісяця. На сьомий місяць після підписання договору клієнт або вносить залишок вартості об’єкта після завершення продажу, або переходить на інший графік платежів відповідно до стандартних умов конкретного проєкту. Договір при цьому не скасовується – змінюється лише фінансова модель.',
+        'Такий формат дозволяє закріпити за собою вибраний об’єкт нерухомості та зберегти поточні умови придбання на час продажу попереднього майна.'
+      ]
+    }
+  ]
+}
     ];
 
     // English translations for the same structure (used when site path contains /en/)
@@ -305,7 +336,39 @@ class FinanceModule {
         ]
       }
     ]
-  }
+  },
+  {
+  title: 'Assistance with Selling Previous Property and an Individual Installment Schedule (Trade-In)',
+  description: 'RIEL’s trade-in service is designed for investors who plan to purchase property in our projects while simultaneously selling their existing asset. It allows clients to reserve the selected unit in advance and secure favorable purchase terms without losing time while waiting for the sale to be completed.',
+  cards: [
+    {
+      title: 'Who It Is For',
+      svg: this.svgs[0],
+      texts: [
+        'RIEL’s trade-in service is ideal for those looking to upgrade their residential or business space, change format or location, and do so quickly—without pauses, unnecessary steps, prolonged decision-making, or complex procedures.',
+      ]
+    },
+    {
+      title: 'Scope of Application',
+      svg: this.svgs[2],
+      texts: [
+        'Within the program, an investor may sell any owned real estate, including apartments, serviced apartments, commercial premises, or parking spaces. The program applies exclusively to real estate and does not cover land plots, vehicles, or other assets. The property may be registered either in the investor’s name or in the name of an immediate family member.',
+        'To initiate the trade-in process, the client submits an application specifying the property, its address, area, estimated sale value, and provides the relevant title documents.'
+      ]
+    },
+    {
+      title: 'How It Works and Key Benefits',
+      svg: this.svgs[1],
+      texts: [
+        'The key advantage of the service is that the client does not need to wait for the sale of their existing property in order to select a new one. During this waiting period, prices may change and desired layouts or available units may no longer be accessible. That is why we offer the option to secure the selected property at the current price while simultaneously organizing the sale of the previous asset.',
+        'Within the service, the client may choose the most convenient sales format for their existing property. They may handle the sale independently or use our assistance. If the property was previously purchased from RIEL, its resale may be supported by our in-house sales team. If the property was not purchased from RIEL, we transfer it to trusted partner real estate agencies. In all cases, the client determines the sales approach, while we provide coordination and support as needed.',
+        'The financial model of the trade-in involves signing a standard agreement that sets the following payment schedule: for six months, the client pays a fixed amount of one thousand US dollars per month. In the seventh month after signing the agreement, the client either pays the remaining balance after completing the sale of the previous property or switches to an alternative payment schedule in accordance with the standard terms of the selected project. The agreement remains in force—only the financial model is adjusted.',
+        'This format allows clients to secure their chosen property and maintain the current purchase terms throughout the sale of their previous asset.'
+      ]
+    }
+  ]
+}
+
 ];
 
     this.init();
