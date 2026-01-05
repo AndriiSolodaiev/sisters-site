@@ -6,7 +6,7 @@ import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin';
 import axios from 'axios';
 import '../animations';
 import '../section-construction';
-import './finance.js'
+
 initSmoothScrolling();
 gsap.registerPlugin(ScrollTrigger, CustomEase, MorphSVGPlugin);
 // googleMap();
@@ -954,3 +954,5 @@ if (document.querySelector('.section_view')) {
     document.querySelector('.iframe-container').classList.add('active-iframe');
   });
 }
+
+
