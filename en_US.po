@@ -1,0 +1,588 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-25 13:03+0000\n"
+"PO-Revision-Date: 2026-02-20 12:50+0200\n"
+"Last-Translator: \n"
+"Language-Team: English (United States)\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 3.8\n"
+"X-Loco-Version: 2.5.3; wp-6.8.1\n"
+
+msgid "Головне зображення"
+msgstr "Main image"
+
+msgid "Sister"
+msgstr "Sister"
+
+msgid "Містечко посмішок"
+msgstr "Town of smiles"
+
+msgid "Вибрати квартиру"
+msgstr "Choose an apartment"
+
+msgid "Адреса"
+msgstr "Address"
+
+msgid "вул. Клеманська, 3"
+msgstr "3 Klemanska street"
+
+msgid "до ст. м. «Осокорки» – 12 хвилин"
+msgstr "12 minutes to Osokorky metro"
+
+msgid "Квартири"
+msgstr "Apartments"
+
+msgid "5 черг"
+msgstr "5 phases"
+
+msgid "2579 квартир"
+msgstr "2579 apartments"
+
+msgid "235 квартир у першій черзі"
+msgstr "235 apartments in the first phase"
+
+msgid "Готовність першої черги"
+msgstr "First phase completion"
+
+msgid "1 квартал"
+msgstr "Q1"
+
+msgid "2027 року"
+msgstr "of 2027"
+
+msgid ""
+"Sister — простір, де поєднуються робота, відпочинок і спілкування для тих, "
+"хто цінує різноманітність у повсякденному житті."
+msgstr ""
+"Sister — a space where work, rest, and communication meet for those who "
+"value variety in everyday life."
+
+msgid "Яку квартиру <br>шукаєте?"
+msgstr "Which apartment <br>are you looking for?"
+
+msgid "планування"
+msgstr "layout"
+
+msgid "Отримати консультацію"
+msgstr "Get a consultation"
+
+msgid ""
+"Не впевнені, яка квартира вам підходить? Пройдіть наш квіз і підберіть "
+"квартиру своєї мрії."
+msgstr ""
+"Not sure which apartment suits you? Take our quiz and find your dream home."
+
+msgid "Підібрати квартиру"
+msgstr "Find an apartment"
+
+msgid "Який вигляд може мати ваша квартира?"
+msgstr "What could your apartment look like?"
+
+msgid "квартира"
+msgstr "apartment"
+
+msgid "Переваги"
+msgstr "Advantages"
+
+msgid "Розташування"
+msgstr "Location"
+
+msgid "Архітектура"
+msgstr "Architecture"
+
+msgid "Інфраструктура"
+msgstr "Infrastructure"
+
+msgid "Парк активностей"
+msgstr "Activity park"
+
+msgid "Власні школа та дитсадок"
+msgstr "Own school and kindergarten"
+
+msgid "Екосистема послуг"
+msgstr "Service ecosystem"
+
+msgid "Riel Family Style"
+msgstr "Riel Family Style"
+
+msgid "Безпека"
+msgstr "Safety"
+
+msgid "Автономність"
+msgstr "Autonomy"
+
+msgid "Школи"
+msgstr "Schools"
+
+msgid "Садочки"
+msgstr "Kindergartens"
+
+msgid "Лікарні"
+msgstr "Hospitals"
+
+msgid "Розваги"
+msgstr "Entertainment"
+
+msgid "Ресторани"
+msgstr "Restaurants"
+
+msgid "Спорт"
+msgstr "Sports"
+
+msgid "Продукти"
+msgstr "Groceries"
+
+msgid "Забронювати консультацію"
+msgstr "Book a consultation"
+
+msgid "Характеристики"
+msgstr "Specifications"
+
+msgid "Клас"
+msgstr "Class"
+
+msgid "Комфорт"
+msgstr "Comfort"
+
+msgid "Технологія будівництва"
+msgstr "Construction technology"
+
+msgid "Каркасна"
+msgstr "Frame"
+
+msgid "Утеплення"
+msgstr "Insulation"
+
+msgid "Мінеральна вата"
+msgstr "Mineral wool"
+
+msgid "Висота стелі"
+msgstr "Ceiling height"
+
+msgid "2,7 м"
+msgstr "2.7 m"
+
+msgid "Наповнення квартири"
+msgstr "Apartment features"
+
+msgid ""
+"Стяжка, радіатори, вхідні двері, стартовий пакет Ajaх, лічильники тепла, "
+"електроенергії та води"
+msgstr ""
+"Floor screed, radiators, entrance doors, Ajax starter pack, heat, "
+"electricity and water meters"
+
+msgid "Паркінг"
+msgstr "Parking"
+
+msgid ""
+"Підземний (на 1405 автомісць, 55 мотомісць та 31 веломісце) та гостьовий "
+"паркінг навколо ЖК на 149 місць"
+msgstr ""
+"Underground (for 1405 cars, 55 motorcycles, and 31 bikes) and guest parking "
+"around the complex for 149 cars"
+
+msgid "Кількість поверхів"
+msgstr "Number of floors"
+
+msgid "9 – 24"
+msgstr "9 – 24"
+
+msgid "Стіни"
+msgstr "Walls"
+
+msgid "Газоблок та керамоблок"
+msgstr "Aerated block and ceramic block"
+
+msgid "Вікна"
+msgstr "Windows"
+
+msgid ""
+"5-камерний металопластиковий профіль з 2-камерним склопакетом, фурнітура з "
+"функцією провітрювання"
+msgstr ""
+"5-chamber metal-plastic profile with 2-chamber double glazing, fittings with "
+"ventilation function"
+
+msgid "Опалення"
+msgstr "Heating"
+
+msgid "Автономне - від дахової котельні"
+msgstr "Autonomous from rooftop boiler"
+
+msgid "Територія"
+msgstr "Territory"
+
+msgid "Двір без авто"
+msgstr "Car-free yard"
+
+msgid "У нас двір без машин, але ми подбали про ваше авто."
+msgstr "Our yard is car-free, but we’ve taken care of your car."
+
+msgid ""
+"Підземний паркінг на 1405 автомісць, 55 мотомісць і 31 веломісце з ліфтом "
+"просто до вашого поверху"
+msgstr ""
+"Underground parking for 1405 cars, 55 motorcycles, and 31 bicycles with "
+"elevator right to your floor"
+
+msgid "Місця для тимчасової стоянки та розвантаження навколо комплексу"
+msgstr "Temporary parking and unloading spots around the complex"
+
+msgid "паркінг"
+msgstr "parking"
+
+msgid "Укриття"
+msgstr "Shelter"
+
+msgid "У Sister ми піклуємося про комфорт навіть у найтривожніші моменти."
+msgstr "At Sister, we care about comfort even in anxious moments."
+
+msgid ""
+"Наше укриття облаштоване дитячою ігровою зоною, туалетною кімнатою та має "
+"гарантоване електропостачання — щоб і дорослі, і діти почувалися максимально "
+"захищено."
+msgstr ""
+"Our shelter has a kids’ play area, a bathroom, and guaranteed electricity — "
+"so adults and children feel as safe as possible."
+
+msgid "укриття"
+msgstr "shelter"
+
+msgid "Замовити дзвінок"
+msgstr "Order a call"
+
+msgid "Галерея"
+msgstr "Gallery"
+
+msgid "Для дітей"
+msgstr "For children"
+
+msgid "Арт обʼєкти"
+msgstr "Art objects"
+
+msgid "Хол"
+msgstr "Lobby"
+
+msgid "Житловий поверх"
+msgstr "Residential floor"
+
+msgid "Інтер'єр"
+msgstr "Interior"
+
+msgid "Акції та новини"
+msgstr "Promotions and news"
+
+msgid "Умови оплати"
+msgstr "Payment terms"
+
+msgid "Додаткові знижки"
+msgstr "Additional discounts"
+
+msgid "Внесок від 30%"
+msgstr "Deposit from 30%"
+
+msgid "Без зміни вартості"
+msgstr "No price change"
+
+msgid "Повна оплата"
+msgstr "Full payment"
+
+msgid "Знижка 3%"
+msgstr "3% discount"
+
+msgid "Розтермінування"
+msgstr "Installment plan"
+
+msgid "– Щомісячно або поквартально"
+msgstr "– Monthly or quarterly"
+
+msgid "– Розрахунок у гривні*"
+msgstr "– Payment in UAH*"
+
+msgid "– До введення в експлуатацію"
+msgstr "– Until commissioning"
+
+msgid "– Привʼязка до курсу продажу $ на"
+msgstr "– Linked to the sale rate of $ on"
+
+msgid "riel.ua"
+msgstr "riel.ua"
+
+msgid "* для уточнення поточного курсу звертайтеся до відділу продажу"
+msgstr "* For the current rate, please contact the sales department"
+
+msgid "Діють для:"
+msgstr "Available for:"
+
+msgid "Військовослужбовців (усі задіяні структури) та їхніх сімей"
+msgstr "Military personnel (all involved structures) and their families"
+
+msgid "Медпрацівників та їхніх сімей"
+msgstr "Medical workers and their families"
+
+msgid "Переселенців із зони бойових дій"
+msgstr "IDPs from combat zones"
+
+msgid "Умова"
+msgstr "Condition"
+
+msgid "Знижка надається за будь-якого першого внеску"
+msgstr "Discount applies to any first deposit"
+
+msgid "Військовослужбовці"
+msgstr "Military personnel"
+
+msgid "Якщо перебувають у зоні бойових дій — знижка 5%"
+msgstr "If in a combat zone — 5% discount"
+
+msgid "Якщо не перебувають у зоні бойових дій — знижка 3%"
+msgstr "If not in a combat zone — 3% discount"
+
+msgid "Медпрацівники"
+msgstr "Medical workers"
+
+msgid "Переселенці із зони бойових дій"
+msgstr "IDPs from combat zones"
+
+msgid "Знижка 5%"
+msgstr "5% discount"
+
+msgid "Звʼязатися з менеджером"
+msgstr "Contact manager"
+
+msgid "Про забудовника"
+msgstr "About the developer"
+
+msgid "Ріел — системний девелопер, який не зупиняється."
+msgstr "Riel — a systematic developer that never stops."
+
+msgid "На ринку з 2003 року"
+msgstr "On the market since 2003"
+
+msgid ""
+"100+ збудованих обʼєктів загальною площею понад 1 мільйон квадратних метрів "
+"у Києві та Львові"
+msgstr ""
+"100+ completed projects with a total area of over 1 million square meters in "
+"Kyiv and Lviv"
+
+msgid ""
+"Єдиний у Києві, хто добудував усі об’єкти, розпочаті до повномасштабної війни"
+msgstr ""
+"The only one in Kyiv to complete all projects started before the full-scale "
+"war"
+
+msgid "Дізнатися більше"
+msgstr "Learn more"
+
+msgid "+380 (73) 288 46 10"
+msgstr "+380 (73) 288 46 10"
+
+msgid "Ваше ім’я"
+msgstr "Your name"
+
+msgid "Номер телефону"
+msgstr "Phone number"
+
+msgid "Телефон:"
+msgstr "Phone:"
+
+msgid "Оберіть час:"
+msgstr "Choose a time:"
+
+msgid "Оберіть час"
+msgstr "Choose time"
+
+msgid "Зараз усе підберемо"
+msgstr "We’ll select everything now"
+
+msgid "Який у вас бюджет?"
+msgstr "What’s your budget?"
+
+msgid "Яка кількість кімнат вам потрібна?"
+msgstr "How many rooms do you need?"
+
+msgid "(можна вибрати декілька варіантів)"
+msgstr "(you can choose several options)"
+
+msgid "Студія"
+msgstr "Studio"
+
+msgid "1 спальня"
+msgstr "1 bedroom"
+
+msgid "2 спальні"
+msgstr "2 bedrooms"
+
+msgid "3 спальні"
+msgstr "3 bedrooms"
+
+msgid "Яка площа?"
+msgstr "What area?"
+
+msgid "Що має бути у квартирі?"
+msgstr "What should be in the apartment?"
+
+msgid "Вид"
+msgstr "View"
+
+msgid "Сонячна сторона"
+msgstr "Sunny side"
+
+msgid "Велика кухня або кухня, обʼєднана з вітальнею"
+msgstr "Large kitchen or kitchen combined with living room"
+
+msgid "2-3 санвузли"
+msgstr "2-3 bathrooms"
+
+msgid "Гардеробна"
+msgstr "Walk-in closet"
+
+msgid "Не останній поверх"
+msgstr "Not the top floor"
+
+msgid "Дитяча та майстер-спальня на різних сторонах квартири"
+msgstr "Children's and master bedrooms on different sides of the apartment"
+
+msgid "Для кого обираєте квартиру?"
+msgstr "Who are you choosing an apartment for?"
+
+msgid "Для себе"
+msgstr "For myself"
+
+msgid "Для своєї родини"
+msgstr "For my family"
+
+msgid "Для батьків"
+msgstr "For parents"
+
+msgid "Інвестую в нерухомість"
+msgstr "Investing in real estate"
+
+msgid "Ваше ім’я*"
+msgstr "Your name*"
+
+msgid "Номер телефону*"
+msgstr "Phone number*"
+
+msgid "Залишити заявку"
+msgstr "Submit request"
+
+msgid "Про проєкт"
+msgstr "About the project"
+
+msgid "Паркінг та укриття"
+msgstr "Parking and shelter"
+
+msgid "Умови"
+msgstr "Terms"
+
+msgid "Документація"
+msgstr "Documentation"
+
+msgid "Контакти"
+msgstr "Contacts"
+
+msgid "Адреса відділу продажу"
+msgstr "Sales office address"
+
+msgid "Дніпровська набережна, 17К"
+msgstr "17K Dniprovska Naberezhna"
+
+msgid "Графік роботи"
+msgstr "Work schedule"
+
+msgid "Пн-Пт: 09:00-19:00"
+msgstr "Mon-Fri: 09:00-19:00"
+
+msgid "Сб: 10:00-17:00"
+msgstr "Sat: 10:00-17:00"
+
+msgid "Нд: приймаємо дзвінки 9:00-18:00"
+msgstr "Sun: accept calls 9:00-18:00"
+
+msgid "Зателефонувати нам"
+msgstr "Call us"
+
+msgid "+380 73 288 46 10"
+msgstr "+380 73 288 46 10"
+
+msgid "Наші соцмережі"
+msgstr "Our social networks"
+
+msgid "Facebook"
+msgstr "Facebook"
+
+msgid "Instagram"
+msgstr "Instagram"
+
+msgid "Запит отримали"
+msgstr "Request received"
+
+msgid ""
+"Дякуємо! Наші менеджери отримали ваш запит та зателефонують вам у найближчий "
+"час."
+msgstr ""
+"Thank you! Our managers have received your request and will call you soon."
+
+msgid "Чекаю"
+msgstr "Waiting"
+
+msgid "Зателефонувати"
+msgstr "Call"
+
+msgid "написати у Viber"
+msgstr "Text via Viber"
+
+msgid "написати у Telegram"
+msgstr "Text via Telegram"
+
+msgid "написати у WhatsApp"
+msgstr "Text via WhatsApp"
+
+msgid "зателефонувати у Viber"
+msgstr "Call via Viber"
+
+msgid "зателефонувати у Telegram"
+msgstr "Call via Telegram"
+
+msgid "зателефонувати у WhatsApp"
+msgstr "Call via WhatsApp"
+
+msgid "Зручний варіант звʼязку: "
+msgstr "Preferred contact method: "
+
+msgid "Яким може бути ваше життя в Sister"
+msgstr "What could your life look like in Sister"
+
+msgid "SISTER / Київ"
+msgstr "SISTER / Kyiv"
+
+msgid "Завантажити тур"
+msgstr "Load the tour"
+
+msgid "Фінансові продукти"
+msgstr "Financial products"
+
+msgid "Канікули на платежі"
+msgstr "Payment holidays"
+
+msgid "Допомога з перепродажем"
+msgstr "Resale assistance"
+
+msgid "Компенсація у випадку затримки"
+msgstr "Delay Compensation & Rewards"
+
+msgid ""
+"Допомога з продажем попередньої нерухомості та індивідуальний графік "
+"розтермінування (трейд-ін)"
+msgstr ""
+"Assistance with Selling Previous Property and an Individual Installment "
+"Schedule (Trade-In)"
